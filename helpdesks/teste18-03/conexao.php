@@ -2,7 +2,7 @@
 
 error_reporting(0);
 mysqli_report(MYSQLI_REPORT_OFF);
-$mysqli = new mysqli('localhost', 'root', 'senai@604', 'seletiva_web_bazon');
+$mysqli = new mysqli('localhost', 'root', 'senai@604', 'c');
 if ($mysqli->connect_errno) {
     throw new RuntimeException('mysqli connection error: ' . $mysqli->connect_error);
 }
