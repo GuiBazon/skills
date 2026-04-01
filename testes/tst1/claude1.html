@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia PHP – SENAI Skills | Tecnologias Web</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #1f2d45;
+    --accent: #3b82f6;
+    --accent2: #22d3ee;
+    --accent3: #f59e0b;
+    --green: #10b981;
+    --red: #ef4444;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --code-bg: #0d1117;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f172a 50%, #1e1b4b 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.4);
+    color: var(--accent2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    color: var(--text-dim);
+    max-width: 600px;
+    font-size: 16px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .hero-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .hero-chip .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: var(--accent); }
+  .dot-cyan { background: var(--accent2); }
+  .dot-amber { background: var(--accent3); }
+  .dot-green { background: var(--green); }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV SUMMARY */
+  .nav-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 40px 0;
+  }
+  .nav-box h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 20px;
+  }
+  .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .nav-item:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(59,130,246,0.08);
+  }
+  .nav-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    background: rgba(59,130,246,0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* SECTION */
+  .section {
+    margin: 48px 0;
+    scroll-margin-top: 20px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .section-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .section-tag {
+    margin-left: auto;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag-fundamento { background: rgba(34,211,238,0.1); color: var(--accent2); border: 1px solid rgba(34,211,238,0.3); }
+  .tag-pratico { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
+  .tag-avancado { background: rgba(245,158,11,0.1); color: var(--accent3); border: 1px solid rgba(245,158,11,0.3); }
+  .tag-deploy { background: rgba(239,68,68,0.1); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .card p, .card li { color: var(--text-dim); font-size: 14px; }
+  .card ul { padding-left: 18px; }
+  .card li { margin-bottom: 4px; }
+
+  /* INFO BOXES */
+  .info-box {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .info-box.tip {
+    background: rgba(16,185,129,0.08);
+    border-left: 3px solid var(--green);
+    color: var(--text-dim);
+  }
+  .info-box.warning {
+    background: rgba(245,158,11,0.08);
+    border-left: 3px solid var(--accent3);
+    color: var(--text-dim);
+  }
+  .info-box.info {
+    background: rgba(59,130,246,0.08);
+    border-left: 3px solid var(--accent);
+    color: var(--text-dim);
+  }
+  .info-box strong { color: var(--text); }
+
+  /* CODE BLOCKS */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    overflow-x: auto;
+    margin: 16px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  code { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .inline-code {
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.2);
+    color: var(--accent2);
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* SYNTAX HIGHLIGHT (manual) */
+  .kw { color: #c792ea; }    /* keyword */
+  .fn { color: #82aaff; }    /* function */
+  .str { color: #c3e88d; }   /* string */
+  .num { color: #f78c6c; }   /* number */
+  .cmt { color: #546e7a; font-style: italic; } /* comment */
+  .var { color: #ffcb6b; }   /* variable */
+  .op  { color: #89ddff; }   /* operator */
+  .cls { color: #ffcb6b; }   /* class */
+  .attr{ color: #f07178; }   /* attribute */
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  th {
+    background: var(--surface2);
+    color: var(--accent2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* TIMELINE / PLANO */
+  .timeline {
+    display: grid;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .week-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .week-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--accent);
+    line-height: 1.3;
+  }
+  .week-label span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .week-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .week-content ul {
+    padding-left: 16px;
+  }
+  .week-content li {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 3px;
+  }
+
+  /* ENDPOINT TABLE */
+  .ep-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .ep-method {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .ep-get { background: rgba(16,185,129,0.15); color: var(--green); }
+  .ep-post { background: rgba(59,130,246,0.15); color: var(--accent); }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .hero { padding: 40px 20px; }
+    .week-card { grid-template-columns: 1fr; }
+    .nav-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">SENAI Skills · Módulo 17 · Tecnologias Web</div>
+    <h1>Guia de Preparação<br><span>PHP do Zero ao Projeto</span></h1>
+    <p>Material completo e orientado ao projeto da prova: uma API REST para plataforma de simulados do ENEM. Cada conceito é ensinado no contexto do que você vai construir na competição.</p>
+    <div class="hero-meta">
+      <div class="hero-chip"><div class="dot dot-blue"></div> 8 semanas de estudo</div>
+      <div class="hero-chip"><div class="dot dot-cyan"></div> 5h/semana</div>
+      <div class="hero-chip"><div class="dot dot-amber"></div> Orientado a projeto</div>
+      <div class="hero-chip"><div class="dot dot-green"></div> PHP + MySQL + Laravel</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ÍNDICE -->
+  <div class="nav-box">
+    <h2>Índice do Guia</h2>
+    <div class="nav-grid">
+      <a class="nav-item" href="#sec1"><span class="nav-num">01</span> O Projeto da Prova</a>
+      <a class="nav-item" href="#sec2"><span class="nav-num">02</span> Ambiente de Dev</a>
+      <a class="nav-item" href="#sec3"><span class="nav-num">03</span> PHP Básico</a>
+      <a class="nav-item" href="#sec4"><span class="nav-num">04</span> PHP + MySQL</a>
+      <a class="nav-item" href="#sec5"><span class="nav-num">05</span> API REST do Zero</a>
+      <a class="nav-item" href="#sec6"><span class="nav-num">06</span> Autenticação (Token)</a>
+      <a class="nav-item" href="#sec7"><span class="nav-num">07</span> Laravel (Framework)</a>
+      <a class="nav-item" href="#sec8"><span class="nav-num">08</span> Construindo a API</a>
+      <a class="nav-item" href="#sec9"><span class="nav-num">09</span> Deploy no Linux</a>
+      <a class="nav-item" href="#sec10"><span class="nav-num">10</span> Plano de Estudos</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 1 – O PROJETO -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>O Projeto da Prova</h2>
+      <span class="section-tag tag-fundamento">Fundamento</span>
+    </div>
+
+    <p style="color:var(--text-dim); margin-bottom:20px;">Antes de escrever uma linha de PHP, você precisa entender <strong style="color:var(--text)">exatamente o que precisa entregar</strong>. A prova pede uma <strong style="color:var(--accent)">API REST</strong> — um conjunto de URLs (endpoints) que recebem e devolvem dados no formato JSON.</p>
+
+    <div class="card">
+      <h3>📋 O que é uma API REST?</h3>
+      <p>Imagine um garçom em um restaurante. Você (o cliente) pede algo, o garçom (a API) vai à cozinha (o banco de dados) e traz o resultado. Você não vê a cozinha — só recebe o prato. No mundo web, a "cozinha" é o banco de dados MySQL e o "cardápio" são os endpoints.</p>
+    </div>
+
+    <div class="card">
+      <h3>🗂️ Endpoints que você precisará construir</h3>
+      <table class="ep-table">
+        <thead>
+          <tr><th>Método</th><th>URL</th><th>Função</th><th>Auth?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/registro</code></td><td>Cadastrar usuário</td><td>Não</td></tr>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/login</code></td><td>Fazer login → gera token</td><td>Não</td></tr>
+          <tr><td><span class="ep-method ep-get">GET</span></td><td><code>/api/logout</code></td><td>Fazer logout → apaga token</td><td>Sim</td></tr>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/banco_questoes</code></td><td>Admin: cadastrar questão</td><td>Admin</td></tr>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/prova</code></td><td>Criar prova personalizada</td><td>Sim</td></tr>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/prova/{id}/responder/{id_pergunta}</code></td><td>Responder questão</td><td>Sim</td></tr>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/prova/{id}/finalizar</code></td><td>Finalizar prova</td><td>Sim</td></tr>
+          <tr><td><span class="ep-method ep-post">POST</span></td><td><code>/api/prova/{id}</code></td><td>Consultar prova</td><td>Sim</td></tr>
+          <tr><td><span class="ep-method ep-get">GET</span></td><td><code>/api/metricas</code></td><td>Ver desempenho do usuário</td><td>Sim</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>🗃️ Banco de Dados — Estrutura necessária</h3>
+      <p style="margin-bottom:12px;">Com base nos endpoints, você precisará das seguintes tabelas no MySQL:</p>
+      <pre><code><span class="cmt">-- Tabela de usuários</span>
+<span class="kw">users</span>: id, nome, username (único), senha (hash), token, is_admin
+
+<span class="cmt">-- Tabela de questões do banco</span>
+<span class="kw">questoes</span>: id, enunciado, dificuldade, materia, created_at
+
+<span class="cmt">-- Tabela de opções de cada questão</span>
+<span class="kw">opcoes</span>: id, questao_id, letra, opcao, opcao_correta (boolean)
+
+<span class="cmt">-- Tabela de provas criadas</span>
+<span class="kw">provas</span>: id, user_id, dificuldade, quantidade_questoes,
+         materias (JSON), finalizada, created_at
+
+<span class="cmt">-- Pivot: questões associadas a cada prova</span>
+<span class="kw">prova_questoes</span>: id, prova_id, questao_id
+
+<span class="cmt">-- Respostas dadas pelo usuário</span>
+<span class="kw">respostas</span>: id, prova_id, questao_id, user_id, resposta_dada</code></pre>
+    </div>
+
+    <div class="info-box tip">
+      <strong>💡 Dica estratégica:</strong> Sempre que não souber o que fazer durante a prova, volte para este mapa de endpoints. Cada endpoint é um "mini-projeto" independente. Entregue os mais simples primeiro (registro, login) para garantir pontos.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 2 – AMBIENTE -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Configurando o Ambiente</h2>
+      <span class="section-tag tag-fundamento">Fundamento</span>
+    </div>
+
+    <p style="color:var(--text-dim); margin-bottom:20px;">Durante os estudos, você usará o <strong style="color:var(--text)">XAMPP</strong> no seu computador Windows para simular o servidor. Na competição, o projeto roda em um servidor Linux (Apache + PHP + MySQL).</p>
+
+    <div class="card">
+      <h3>📦 XAMPP — Instalação Rápida</h3>
+      <ul>
+        <li>Baixe em <strong>apachefriends.org</strong></li>
+        <li>Instale com as opções padrão (Apache + MySQL + PHP)</li>
+        <li>Abra o XAMPP Control Panel → clique <strong>Start</strong> em Apache e MySQL</li>
+        <li>Acesse <code class="inline-code">http://localhost</code> no navegador — deve aparecer a tela do XAMPP</li>
+        <li>Seus projetos ficam em <code class="inline-code">C:\xampp\htdocs\</code></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🛠️ VS Code — Extensões essenciais</h3>
+      <ul>
+        <li><strong>PHP Intelephense</strong> — autocomplete e erros em tempo real</li>
+        <li><strong>Thunder Client</strong> — testar endpoints diretamente no VS Code</li>
+        <li><strong>GitLens</strong> — controle de versão visual</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🧪 Testando endpoints com Postman</h3>
+      <p>O Postman permite simular chamadas à sua API antes de existir um frontend. Você vai usar muito isso na prova. Conceito básico:</p>
+      <pre><code><span class="cmt">Exemplo de chamada POST para registro:</span>
+URL: <span class="str">http://localhost/meu_projeto/api/registro</span>
+
+Headers:
+  Content-Type: <span class="str">application/json</span>
+
+Body (raw JSON):
+{
+  <span class="str">"nome"</span>: <span class="str">"João"</span>,
+  <span class="str">"username"</span>: <span class="str">"joao123"</span>,
+  <span class="str">"senha"</span>: <span class="str">"minhasenha"</span>
+}</code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 3 – PHP BÁSICO -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>PHP Básico — Do Zero</h2>
+      <span class="section-tag tag-fundamento">Fundamento</span>
+    </div>
+
+    <div class="info-box info">
+      <strong>Contexto:</strong> Como você já conhece lógica de programação, vamos focar nas <strong>particularidades do PHP</strong> que diferem de outras linguagens, sempre mostrando como elas serão usadas no projeto.
+    </div>
+
+    <div class="card">
+      <h3>📌 Sintaxe Básica</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// Variáveis começam com $ (obrigatório!)</span>
+<span class="var">$nome</span> = <span class="str">"João"</span>;
+<span class="var">$idade</span> = <span class="num">25</span>;
+<span class="var">$ativo</span> = <span class="kw">true</span>;
+
+<span class="cmt">// Tipos: string, int, float, bool, array, null</span>
+
+<span class="cmt">// Concatenação usa ponto (.)</span>
+<span class="kw">echo</span> <span class="str">"Olá, "</span> . <span class="var">$nome</span> . <span class="str">"!"</span>;
+<span class="cmt">// Ou com aspas duplas (interpola variáveis):</span>
+<span class="kw">echo</span> <span class="str">"Olá, <span class="var">$nome</span>!"</span>;
+
+<span class="cmt">// Arrays</span>
+<span class="var">$materias</span> = [<span class="str">"Matemática"</span>, <span class="str">"Física"</span>, <span class="str">"Química"</span>];
+<span class="kw">echo</span> <span class="var">$materias</span>[<span class="num">0</span>]; <span class="cmt">// "Matemática"</span>
+
+<span class="cmt">// Array associativo (como objeto / dicionário)</span>
+<span class="var">$usuario</span> = [
+  <span class="str">"nome"</span> => <span class="str">"João"</span>,
+  <span class="str">"username"</span> => <span class="str">"joao123"</span>,
+  <span class="str">"senha"</span> => <span class="str">"hash_aqui"</span>
+];
+<span class="kw">echo</span> <span class="var">$usuario</span>[<span class="str">"nome"</span>]; <span class="cmt">// "João"</span>
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🔄 Estruturas de Controle</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// IF / ELSE — idêntico a outras linguagens</span>
+<span class="var">$dificuldade</span> = <span class="str">"FACIL"</span>;
+
+<span class="kw">if</span> (<span class="var">$dificuldade</span> === <span class="str">"FACIL"</span>) {
+  <span class="kw">echo</span> <span class="str">"Modo fácil"</span>;
+} <span class="kw">elseif</span> (<span class="var">$dificuldade</span> === <span class="str">"MEDIA"</span>) {
+  <span class="kw">echo</span> <span class="str">"Modo médio"</span>;
+} <span class="kw">else</span> {
+  <span class="kw">echo</span> <span class="str">"Modo difícil"</span>;
+}
+
+<span class="cmt">// FOREACH — muito usado para percorrer resultados do BD</span>
+<span class="var">$questoes</span> = [<span class="str">"Q1"</span>, <span class="str">"Q2"</span>, <span class="str">"Q3"</span>];
+<span class="kw">foreach</span> (<span class="var">$questoes</span> <span class="kw">as</span> <span class="var">$questao</span>) {
+  <span class="kw">echo</span> <span class="var">$questao</span>;
+}
+
+<span class="cmt">// Com chave => valor</span>
+<span class="kw">foreach</span> (<span class="var">$usuario</span> <span class="kw">as</span> <span class="var">$chave</span> => <span class="var">$valor</span>) {
+  <span class="kw">echo</span> <span class="str">"<span class="var">$chave</span>: <span class="var">$valor</span>"</span>;
+}
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>⚙️ Funções</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// Definindo funções</span>
+<span class="kw">function</span> <span class="fn">calcularPontuacao</span>(<span class="var">$acertos</span>, <span class="var">$total</span>) {
+  <span class="kw">return</span> (<span class="var">$acertos</span> / <span class="var">$total</span>) * <span class="num">100</span>;
+}
+
+<span class="var">$nota</span> = <span class="fn">calcularPontuacao</span>(<span class="num">30</span>, <span class="num">45</span>);
+<span class="kw">echo</span> <span class="var">$nota</span>; <span class="cmt">// 66.67</span>
+
+<span class="cmt">// Funções nativas úteis para o projeto:</span>
+<span class="fn">json_encode</span>(<span class="var">$array</span>);  <span class="cmt">// Array PHP → string JSON</span>
+<span class="fn">json_decode</span>(<span class="var">$json</span>, <span class="kw">true</span>); <span class="cmt">// String JSON → Array PHP</span>
+<span class="fn">password_hash</span>(<span class="var">$senha</span>, <span class="kw">PASSWORD_BCRYPT</span>); <span class="cmt">// Criptografar senha</span>
+<span class="fn">password_verify</span>(<span class="var">$senha</span>, <span class="var">$hash</span>); <span class="cmt">// Verificar senha</span>
+<span class="fn">md5</span>(<span class="var">$texto</span>); <span class="cmt">// Hash MD5 (para gerar token)</span>
+<span class="fn">in_array</span>(<span class="var">$valor</span>, <span class="var">$array</span>); <span class="cmt">// Verificar se valor está em array</span>
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Recebendo Dados HTTP (crucial para a API!)</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// Ler o método HTTP da requisição</span>
+<span class="var">$metodo</span> = <span class="var">$_SERVER</span>[<span class="str">'REQUEST_METHOD'</span>]; <span class="cmt">// "GET", "POST", etc.</span>
+
+<span class="cmt">// Ler body JSON (como será na API)</span>
+<span class="var">$body</span> = <span class="fn">file_get_contents</span>(<span class="str">'php://input'</span>);
+<span class="var">$dados</span> = <span class="fn">json_decode</span>(<span class="var">$body</span>, <span class="kw">true</span>);
+
+<span class="var">$nome</span>     = <span class="var">$dados</span>[<span class="str">'nome'</span>] ?? <span class="kw">null</span>;
+<span class="var">$username</span> = <span class="var">$dados</span>[<span class="str">'username'</span>] ?? <span class="kw">null</span>;
+<span class="var">$senha</span>    = <span class="var">$dados</span>[<span class="str">'senha'</span>] ?? <span class="kw">null</span>;
+
+<span class="cmt">// Ler headers (para pegar o token de autenticação)</span>
+<span class="var">$headers</span>  = <span class="fn">getallheaders</span>();
+<span class="var">$token</span>    = <span class="var">$headers</span>[<span class="str">'Authorization'</span>] ?? <span class="kw">null</span>;
+
+<span class="cmt">// Devolver resposta JSON</span>
+<span class="fn">header</span>(<span class="str">'Content-Type: application/json'</span>);
+<span class="fn">http_response_code</span>(<span class="num">200</span>); <span class="cmt">// ou 401, 422, 404...</span>
+<span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Cadastro realizado com sucesso'</span>]);
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="info-box warning">
+      <strong>⚠️ Atenção:</strong> O operador <code class="inline-code">??</code> (null coalescing) é seu melhor amigo na API. Ele retorna o valor se existir, ou <code class="inline-code">null</code> se não existir — evita erros quando um campo não é enviado.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 4 – PHP + MySQL -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>PHP + MySQL com PDO</h2>
+      <span class="section-tag tag-pratico">Prático</span>
+    </div>
+
+    <div class="info-box info">
+      <strong>Por que PDO?</strong> PDO (PHP Data Objects) é a forma <strong>segura e moderna</strong> de conectar PHP ao MySQL. Ela previne ataques de SQL Injection automaticamente com <em>prepared statements</em>. É o padrão que você deve usar na competição.
+    </div>
+
+    <div class="card">
+      <h3>🔌 Conectando ao Banco</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// config/database.php</span>
+<span class="kw">function</span> <span class="fn">conectar</span>() {
+  <span class="var">$host</span>   = <span class="str">'localhost'</span>;
+  <span class="var">$banco</span>  = <span class="str">'enem_db'</span>;
+  <span class="var">$user</span>   = <span class="str">'root'</span>;
+  <span class="var">$pass</span>   = <span class="str">''</span>; <span class="cmt">// vazio no XAMPP local</span>
+
+  <span class="kw">try</span> {
+    <span class="var">$pdo</span> = <span class="kw">new</span> <span class="cls">PDO</span>(
+      <span class="str">"mysql:host=<span class="var">$host</span>;dbname=<span class="var">$banco</span>;charset=utf8"</span>,
+      <span class="var">$user</span>, <span class="var">$pass</span>
+    );
+    <span class="var">$pdo</span>-><span class="fn">setAttribute</span>(<span class="cls">PDO</span>::<span class="attr">ATTR_ERRMODE</span>, <span class="cls">PDO</span>::<span class="attr">ERRMODE_EXCEPTION</span>);
+    <span class="kw">return</span> <span class="var">$pdo</span>;
+  } <span class="kw">catch</span> (<span class="cls">PDOException</span> <span class="var">$e</span>) {
+    <span class="fn">http_response_code</span>(<span class="num">500</span>);
+    <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Erro de conexão'</span>]);
+    <span class="fn">exit</span>();
+  }
+}
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>📝 CRUD Completo</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="var">$pdo</span> = <span class="fn">conectar</span>();
+
+<span class="cmt">// ─── INSERT (Cadastrar usuário) ─────────────────</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(
+  <span class="str">"INSERT INTO users (nome, username, senha) VALUES (?, ?, ?)"</span>
+);
+<span class="var">$senhaHash</span> = <span class="fn">password_hash</span>(<span class="var">$senha</span>, <span class="kw">PASSWORD_BCRYPT</span>);
+<span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$nome</span>, <span class="var">$username</span>, <span class="var">$senhaHash</span>]);
+
+
+<span class="cmt">// ─── SELECT (Buscar usuário pelo username) ──────</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(
+  <span class="str">"SELECT * FROM users WHERE username = ?"</span>
+);
+<span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$username</span>]);
+<span class="var">$usuario</span> = <span class="var">$stmt</span>-><span class="fn">fetch</span>(<span class="cls">PDO</span>::<span class="attr">FETCH_ASSOC</span>);
+<span class="cmt">// $usuario agora é um array: ['id'=>1, 'nome'=>'João', ...]</span>
+
+
+<span class="cmt">// ─── SELECT múltiplos (listar questões) ─────────</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(
+  <span class="str">"SELECT * FROM questoes WHERE dificuldade = ? AND materia = ?"</span>
+);
+<span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$dificuldade</span>, <span class="var">$materia</span>]);
+<span class="var">$questoes</span> = <span class="var">$stmt</span>-><span class="fn">fetchAll</span>(<span class="cls">PDO</span>::<span class="attr">FETCH_ASSOC</span>);
+<span class="cmt">// $questoes é um array de arrays</span>
+
+
+<span class="cmt">// ─── UPDATE (salvar token no login) ─────────────</span>
+<span class="var">$token</span> = <span class="fn">md5</span>(<span class="var">$username</span>);
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(
+  <span class="str">"UPDATE users SET token = ? WHERE id = ?"</span>
+);
+<span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$token</span>, <span class="var">$usuario</span>[<span class="str">'id'</span>]]);
+
+
+<span class="cmt">// ─── DELETE (logout — apagar token) ─────────────</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(
+  <span class="str">"UPDATE users SET token = NULL WHERE token = ?"</span>
+);
+<span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$token</span>]);
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🔍 Verificando resultados</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// Verificar se encontrou usuário</span>
+<span class="kw">if</span> (!<span class="var">$usuario</span>) {
+  <span class="fn">http_response_code</span>(<span class="num">401</span>);
+  <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Dados incorretos'</span>]);
+  <span class="fn">exit</span>();
+}
+
+<span class="cmt">// Verificar senha</span>
+<span class="kw">if</span> (!<span class="fn">password_verify</span>(<span class="var">$senhaDigitada</span>, <span class="var">$usuario</span>[<span class="str">'senha'</span>])) {
+  <span class="fn">http_response_code</span>(<span class="num">401</span>);
+  <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Dados incorretos'</span>]);
+  <span class="fn">exit</span>();
+}
+
+<span class="cmt">// Se chegou aqui, login OK!</span>
+<span class="var">$token</span> = <span class="fn">md5</span>(<span class="var">$usuario</span>[<span class="str">'username'</span>]);
+<span class="cmt">// ... salvar token no banco e retornar</span>
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 5 – API REST DO ZERO -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Construindo uma API REST do Zero (sem framework)</h2>
+      <span class="section-tag tag-pratico">Prático</span>
+    </div>
+
+    <p style="color:var(--text-dim); margin-bottom:20px;">Antes de usar o Laravel, é fundamental entender como uma API funciona "por baixo dos panos". Isso vai tornar o Laravel muito mais fácil de entender.</p>
+
+    <div class="card">
+      <h3>📁 Estrutura de pastas sugerida (PHP puro)</h3>
+      <pre><code>meu_projeto/
+├── api/
+│   ├── index.php        <span class="cmt">← Roteador central (recebe TUDO)</span>
+│   ├── registro.php     <span class="cmt">← Lógica de cadastro</span>
+│   ├── login.php        <span class="cmt">← Lógica de login</span>
+│   └── ...
+├── config/
+│   └── database.php     <span class="cmt">← Conexão com o banco</span>
+├── helpers/
+│   └── auth.php         <span class="cmt">← Verificação de token</span>
+└── .htaccess            <span class="cmt">← Redireciona tudo para index.php</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ O Roteador — <code>api/index.php</code></h3>
+      <p style="margin-bottom:12px;">Este arquivo recebe <em>todas</em> as requisições e decide qual arquivo executar:</p>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="fn">header</span>(<span class="str">'Content-Type: application/json'</span>);
+<span class="fn">header</span>(<span class="str">'Access-Control-Allow-Origin: *'</span>);
+
+<span class="var">$uri</span>    = <span class="fn">parse_url</span>(<span class="var">$_SERVER</span>[<span class="str">'REQUEST_URI'</span>], <span class="kw">PHP_URL_PATH</span>);
+<span class="var">$metodo</span> = <span class="var">$_SERVER</span>[<span class="str">'REQUEST_METHOD'</span>];
+
+<span class="cmt">// Remove o prefixo do projeto da URL</span>
+<span class="var">$uri</span> = <span class="fn">str_replace</span>(<span class="str">'/meu_projeto/api'</span>, <span class="str">''</span>, <span class="var">$uri</span>);
+
+<span class="cmt">// Roteamento</span>
+<span class="kw">if</span> (<span class="var">$uri</span> === <span class="str">'/registro'</span> && <span class="var">$metodo</span> === <span class="str">'POST'</span>) {
+  <span class="kw">require</span> <span class="str">'registro.php'</span>;
+
+} <span class="kw">elseif</span> (<span class="var">$uri</span> === <span class="str">'/login'</span> && <span class="var">$metodo</span> === <span class="str">'POST'</span>) {
+  <span class="kw">require</span> <span class="str">'login.php'</span>;
+
+} <span class="kw">elseif</span> (<span class="var">$uri</span> === <span class="str">'/logout'</span> && <span class="var">$metodo</span> === <span class="str">'GET'</span>) {
+  <span class="kw">require</span> <span class="str">'logout.php'</span>;
+
+} <span class="kw">else</span> {
+  <span class="fn">http_response_code</span>(<span class="num">404</span>);
+  <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Rota não encontrada'</span>]);
+}
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>👤 Exemplo completo: <code>registro.php</code></h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="kw">require_once</span> <span class="str">'../config/database.php'</span>;
+
+<span class="cmt">// 1. Ler os dados enviados</span>
+<span class="var">$body</span>     = <span class="fn">json_decode</span>(<span class="fn">file_get_contents</span>(<span class="str">'php://input'</span>), <span class="kw">true</span>);
+<span class="var">$nome</span>     = <span class="var">$body</span>[<span class="str">'nome'</span>] ?? <span class="kw">null</span>;
+<span class="var">$username</span> = <span class="var">$body</span>[<span class="str">'username'</span>] ?? <span class="kw">null</span>;
+<span class="var">$senha</span>    = <span class="var">$body</span>[<span class="str">'senha'</span>] ?? <span class="kw">null</span>;
+
+<span class="cmt">// 2. Validar campos obrigatórios</span>
+<span class="kw">if</span> (!<span class="var">$nome</span> || !<span class="var">$username</span> || !<span class="var">$senha</span>) {
+  <span class="fn">http_response_code</span>(<span class="num">422</span>);
+  <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Erro ao cadastrar, verifique os dados'</span>]);
+  <span class="fn">exit</span>();
+}
+
+<span class="var">$pdo</span> = <span class="fn">conectar</span>();
+
+<span class="cmt">// 3. Verificar se username já existe</span>
+<span class="var">$check</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(<span class="str">"SELECT id FROM users WHERE username = ?"</span>);
+<span class="var">$check</span>-><span class="fn">execute</span>([<span class="var">$username</span>]);
+<span class="kw">if</span> (<span class="var">$check</span>-><span class="fn">fetch</span>()) {
+  <span class="fn">http_response_code</span>(<span class="num">422</span>);
+  <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Erro ao cadastrar, verifique os dados'</span>]);
+  <span class="fn">exit</span>();
+}
+
+<span class="cmt">// 4. Criar usuário</span>
+<span class="var">$hash</span> = <span class="fn">password_hash</span>(<span class="var">$senha</span>, <span class="kw">PASSWORD_BCRYPT</span>);
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(
+  <span class="str">"INSERT INTO users (nome, username, senha) VALUES (?, ?, ?)"</span>
+);
+<span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$nome</span>, <span class="var">$username</span>, <span class="var">$hash</span>]);
+
+<span class="cmt">// 5. Retornar sucesso</span>
+<span class="fn">http_response_code</span>(<span class="num">200</span>);
+<span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Cadastro realizado com sucesso'</span>]);
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 6 – AUTENTICAÇÃO -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Autenticação por Token</h2>
+      <span class="section-tag tag-pratico">Prático</span>
+    </div>
+
+    <p style="color:var(--text-dim); margin-bottom:20px;">A prova exige que todas as rotas (exceto registro e login) sejam <strong style="color:var(--text)">protegidas por token</strong>. Entender esse fluxo é fundamental.</p>
+
+    <div class="card">
+      <h3>🔐 Como funciona o fluxo de autenticação</h3>
+      <pre><code><span class="cmt">1. Usuário faz POST /login com username + senha
+   → API verifica no banco
+   → Gera token MD5 do username
+   → Salva token no banco
+   → Retorna: { "token": "abc123..." }
+
+2. Nas próximas requisições, o usuário envia:
+   Header:  Authorization: abc123...
+
+3. A API verifica se esse token existe no banco
+   → Encontrou? Usuário válido, prosseguir
+   → Não encontrou? Retornar 401 "Usuário inválido"</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🛡️ Helper de autenticação — <code>helpers/auth.php</code></h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="kw">function</span> <span class="fn">autenticar</span>(<span class="var">$pdo</span>) {
+  <span class="var">$headers</span> = <span class="fn">getallheaders</span>();
+  <span class="var">$token</span>   = <span class="var">$headers</span>[<span class="str">'Authorization'</span>] ?? <span class="kw">null</span>;
+
+  <span class="kw">if</span> (!<span class="var">$token</span>) {
+    <span class="fn">http_response_code</span>(<span class="num">401</span>);
+    <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Usuário inválido'</span>]);
+    <span class="fn">exit</span>();
+  }
+
+  <span class="var">$stmt</span> = <span class="var">$pdo</span>-><span class="fn">prepare</span>(<span class="str">"SELECT * FROM users WHERE token = ?"</span>);
+  <span class="var">$stmt</span>-><span class="fn">execute</span>([<span class="var">$token</span>]);
+  <span class="var">$usuario</span> = <span class="var">$stmt</span>-><span class="fn">fetch</span>(<span class="cls">PDO</span>::<span class="attr">FETCH_ASSOC</span>);
+
+  <span class="kw">if</span> (!<span class="var">$usuario</span>) {
+    <span class="fn">http_response_code</span>(<span class="num">401</span>);
+    <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Usuário inválido'</span>]);
+    <span class="fn">exit</span>();
+  }
+
+  <span class="kw">return</span> <span class="var">$usuario</span>; <span class="cmt">// Retorna dados do usuário logado</span>
+}
+
+<span class="kw">function</span> <span class="fn">autenticarAdmin</span>(<span class="var">$pdo</span>) {
+  <span class="var">$usuario</span> = <span class="fn">autenticar</span>(<span class="var">$pdo</span>);
+
+  <span class="kw">if</span> (!<span class="var">$usuario</span>[<span class="str">'is_admin'</span>]) {
+    <span class="fn">http_response_code</span>(<span class="num">401</span>);
+    <span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Usuário inválido'</span>]);
+    <span class="fn">exit</span>();
+  }
+
+  <span class="kw">return</span> <span class="var">$usuario</span>;
+}
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>✅ Usando a autenticação em uma rota protegida</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="cmt">// qualquer_rota_protegida.php</span>
+<span class="kw">require_once</span> <span class="str">'../config/database.php'</span>;
+<span class="kw">require_once</span> <span class="str">'../helpers/auth.php'</span>;
+
+<span class="var">$pdo</span>     = <span class="fn">conectar</span>();
+<span class="var">$usuario</span> = <span class="fn">autenticar</span>(<span class="var">$pdo</span>); <span class="cmt">// Se falhar, o script para aqui</span>
+
+<span class="cmt">// Se chegou aqui, $usuario está autenticado</span>
+<span class="kw">echo</span> <span class="fn">json_encode</span>([<span class="str">'mensagem'</span> => <span class="str">'Olá, '</span> . <span class="var">$usuario</span>[<span class="str">'nome'</span>]]);
+
+<span class="op">?&gt;</span></code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 7 – LARAVEL -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Laravel — O Framework da Competição</h2>
+      <span class="section-tag tag-avancado">Avançado</span>
+    </div>
+
+    <div class="info-box info">
+      <strong>Por que Laravel?</strong> A prova pede que você use "algum framework PHP". O Laravel é o mais popular e poderoso do mercado. Com ele, você constrói APIs em muito menos tempo e com código mais organizado. O que levaria 200 linhas em PHP puro, no Laravel são ~40 linhas.
+    </div>
+
+    <div class="card">
+      <h3>📦 Instalação do Laravel</h3>
+      <pre><code><span class="cmt"># Pré-requisito: PHP 8.1+ e Composer instalados</span>
+
+<span class="cmt"># Instalar o Composer (gerenciador de pacotes PHP)</span>
+<span class="cmt"># Baixe em: getcomposer.org</span>
+
+<span class="cmt"># Criar novo projeto Laravel</span>
+composer create-project laravel/laravel enem_api
+
+<span class="cmt"># Entrar na pasta</span>
+cd enem_api
+
+<span class="cmt"># Rodar o servidor de desenvolvimento</span>
+php artisan serve
+<span class="cmt"># → Acesse: http://localhost:8000</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>📁 Estrutura do Laravel — o que importa para a prova</h3>
+      <pre><code>enem_api/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/     <span class="cmt">← Sua lógica de negócios aqui</span>
+│   └── Models/              <span class="cmt">← Representação das tabelas do BD</span>
+├── database/
+│   └── migrations/          <span class="cmt">← Scripts de criação das tabelas</span>
+├── routes/
+│   └── api.php              <span class="cmt">← Definição das rotas da API</span>
+└── .env                     <span class="cmt">← Configuração do banco de dados</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>⚙️ Configurando o banco (.env)</h3>
+      <pre><code><span class="cmt"># Arquivo .env na raiz do projeto</span>
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=enem_db
+DB_USERNAME=root
+DB_PASSWORD=</code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🗃️ Migrations — criando tabelas pelo código</h3>
+      <pre><code><span class="cmt"># Criar migration para usuários</span>
+php artisan make:migration create_users_table
+
+<span class="cmt"># Criar migration para questões</span>
+php artisan make:migration create_questoes_table</code></pre>
+      <pre><code><span class="op">&lt;?php</span>
+<span class="cmt">// database/migrations/...create_questoes_table.php</span>
+
+<span class="kw">public function</span> <span class="fn">up</span>() {
+  <span class="cls">Schema</span>::<span class="fn">create</span>(<span class="str">'questoes'</span>, <span class="kw">function</span> (<span class="cls">Blueprint</span> <span class="var">$table</span>) {
+    <span class="var">$table</span>-><span class="fn">id</span>();
+    <span class="var">$table</span>-><span class="fn">text</span>(<span class="str">'enunciado'</span>);
+    <span class="var">$table</span>-><span class="fn">enum</span>(<span class="str">'dificuldade'</span>, [<span class="str">'FACIL'</span>, <span class="str">'MEDIA'</span>, <span class="str">'DIFICIL'</span>]);
+    <span class="var">$table</span>-><span class="fn">enum</span>(<span class="str">'materia'</span>, [<span class="str">'Portugues'</span>, <span class="str">'Matematica'</span>, <span class="str">'Biologia'</span>, <span class="str">'Fisica'</span>, <span class="str">'Quimica'</span>]);
+    <span class="var">$table</span>-><span class="fn">timestamps</span>();
+  });
+}
+
+<span class="cmt"># Executar todas as migrations (cria as tabelas no banco)</span>
+<span class="cmt">$ php artisan migrate</span>
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🧩 Models — representando as tabelas</h3>
+      <pre><code><span class="cmt"># Criar model</span>
+php artisan make:model Questao</code></pre>
+      <pre><code><span class="op">&lt;?php</span>
+<span class="cmt">// app/Models/Questao.php</span>
+
+<span class="kw">namespace</span> App\Models;
+<span class="kw">use</span> Illuminate\Database\Eloquent\Model;
+
+<span class="kw">class</span> <span class="cls">Questao</span> <span class="kw">extends</span> <span class="cls">Model</span> {
+  <span class="kw">protected</span> <span class="var">$fillable</span> = [
+    <span class="str">'enunciado'</span>, <span class="str">'dificuldade'</span>, <span class="str">'materia'</span>
+  ];
+
+  <span class="cmt">// Relacionamento: uma questão tem várias opções</span>
+  <span class="kw">public function</span> <span class="fn">opcoes</span>() {
+    <span class="kw">return</span> <span class="var">$this</span>-><span class="fn">hasMany</span>(<span class="cls">Opcao</span>::<span class="kw">class</span>);
+  }
+}
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🚦 Rotas da API — <code>routes/api.php</code></h3>
+      <pre><code><span class="op">&lt;?php</span>
+<span class="kw">use</span> App\Http\Controllers\AuthController;
+<span class="kw">use</span> App\Http\Controllers\QuestaoController;
+<span class="kw">use</span> App\Http\Controllers\ProvaController;
+<span class="kw">use</span> Illuminate\Support\Facades\Route;
+
+<span class="cmt">// Rotas públicas (sem autenticação)</span>
+Route::<span class="fn">post</span>(<span class="str">'/registro'</span>, [AuthController::<span class="kw">class</span>, <span class="str">'registro'</span>]);
+Route::<span class="fn">post</span>(<span class="str">'/login'</span>,    [AuthController::<span class="kw">class</span>, <span class="str">'login'</span>]);
+
+<span class="cmt">// Rotas protegidas (requerem token no header Authorization)</span>
+Route::<span class="fn">middleware</span>(<span class="str">'auth:sanctum'</span>)-><span class="fn">group</span>(<span class="kw">function</span> () {
+  Route::<span class="fn">get</span>(<span class="str">'/logout'</span>,  [AuthController::<span class="kw">class</span>, <span class="str">'logout'</span>]);
+  Route::<span class="fn">get</span>(<span class="str">'/metricas'</span>, [AuthController::<span class="kw">class</span>, <span class="str">'metricas'</span>]);
+  Route::<span class="fn">post</span>(<span class="str">'/prova'</span>,  [ProvaController::<span class="kw">class</span>, <span class="str">'criar'</span>]);
+  Route::<span class="fn">post</span>(<span class="str">'/prova/{id}'</span>, [ProvaController::<span class="kw">class</span>, <span class="str">'consultar'</span>]);
+  Route::<span class="fn">post</span>(<span class="str">'/prova/{id}/responder/{id_pergunta}'</span>, [ProvaController::<span class="kw">class</span>, <span class="str">'responder'</span>]);
+  Route::<span class="fn">post</span>(<span class="str">'/prova/{id}/finalizar'</span>, [ProvaController::<span class="kw">class</span>, <span class="str">'finalizar'</span>]);
+
+  <span class="cmt">// Rota exclusiva do admin</span>
+  Route::<span class="fn">post</span>(<span class="str">'/banco_questoes'</span>, [QuestaoController::<span class="kw">class</span>, <span class="str">'store'</span>]);
+});
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🎮 Controller — exemplo do AuthController</h3>
+      <pre><code><span class="cmt"># Criar controller</span>
+php artisan make:controller AuthController</code></pre>
+      <pre><code><span class="op">&lt;?php</span>
+<span class="kw">namespace</span> App\Http\Controllers;
+<span class="kw">use</span> App\Models\User;
+<span class="kw">use</span> Illuminate\Http\Request;
+<span class="kw">use</span> Illuminate\Support\Facades\Hash;
+
+<span class="kw">class</span> <span class="cls">AuthController</span> <span class="kw">extends</span> <span class="cls">Controller</span> {
+
+  <span class="kw">public function</span> <span class="fn">registro</span>(<span class="cls">Request</span> <span class="var">$request</span>) {
+    <span class="cmt">// Validar dados</span>
+    <span class="kw">if</span> (!<span class="var">$request</span>-><span class="fn">nome</span> || !<span class="var">$request</span>-><span class="fn">username</span> || !<span class="var">$request</span>-><span class="fn">senha</span>) {
+      <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>(
+        [<span class="str">'mensagem'</span> => <span class="str">'Erro ao cadastrar, verifique os dados'</span>], <span class="num">422</span>
+      );
+    }
+
+    <span class="cmt">// Verificar username único</span>
+    <span class="kw">if</span> (<span class="cls">User</span>::<span class="fn">where</span>(<span class="str">'username'</span>, <span class="var">$request</span>-><span class="fn">username</span>)-><span class="fn">exists</span>()) {
+      <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>(
+        [<span class="str">'mensagem'</span> => <span class="str">'Erro ao cadastrar, verifique os dados'</span>], <span class="num">422</span>
+      );
+    }
+
+    <span class="cls">User</span>::<span class="fn">create</span>([
+      <span class="str">'nome'</span>     => <span class="var">$request</span>-><span class="fn">nome</span>,
+      <span class="str">'username'</span> => <span class="var">$request</span>-><span class="fn">username</span>,
+      <span class="str">'senha'</span>    => <span class="cls">Hash</span>::<span class="fn">make</span>(<span class="var">$request</span>-><span class="fn">senha</span>),
+    ]);
+
+    <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>([<span class="str">'mensagem'</span> => <span class="str">'Cadastro realizado com sucesso'</span>]);
+  }
+
+  <span class="kw">public function</span> <span class="fn">login</span>(<span class="cls">Request</span> <span class="var">$request</span>) {
+    <span class="var">$usuario</span> = <span class="cls">User</span>::<span class="fn">where</span>(<span class="str">'username'</span>, <span class="var">$request</span>-><span class="fn">username</span>)-><span class="fn">first</span>();
+
+    <span class="kw">if</span> (!<span class="var">$usuario</span> || !<span class="cls">Hash</span>::<span class="fn">check</span>(<span class="var">$request</span>-><span class="fn">senha</span>, <span class="var">$usuario</span>-><span class="fn">senha</span>)) {
+      <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>([<span class="str">'mensagem'</span> => <span class="str">'Dados incorretos'</span>], <span class="num">401</span>);
+    }
+
+    <span class="var">$token</span> = <span class="fn">md5</span>(<span class="var">$usuario</span>-><span class="fn">username</span>);
+    <span class="var">$usuario</span>-><span class="fn">update</span>([<span class="str">'token'</span> => <span class="var">$token</span>]);
+
+    <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>([<span class="str">'token'</span> => <span class="var">$token</span>]);
+  }
+}
+<span class="op">?&gt;</span></code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 8 – CONSTRUINDO A API COMPLETA -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Construindo a API Completa</h2>
+      <span class="section-tag tag-avancado">Avançado</span>
+    </div>
+
+    <div class="card">
+      <h3>🏗️ Criação de Prova — Lógica mais complexa</h3>
+      <p style="margin-bottom:12px;">Este é o endpoint mais desafiador: você recebe matérias e dificuldade, busca questões aleatórias e cria uma prova:</p>
+      <pre><code><span class="op">&lt;?php</span>
+<span class="cmt">// ProvaController.php</span>
+
+<span class="kw">public function</span> <span class="fn">criar</span>(<span class="cls">Request</span> <span class="var">$request</span>) {
+  <span class="var">$usuario</span>   = <span class="var">$request</span>-><span class="fn">user</span>(); <span class="cmt">// usuário autenticado</span>
+  <span class="var">$dificuldade</span>  = <span class="var">$request</span>-><span class="fn">dificuldade</span>;
+  <span class="var">$quantidade</span>   = <span class="var">$request</span>-><span class="fn">quantidade_questoes</span>;
+  <span class="var">$materias</span>     = <span class="var">$request</span>-><span class="fn">materias</span>; <span class="cmt">// array de strings</span>
+
+  <span class="cmt">// Validar campos obrigatórios</span>
+  <span class="kw">if</span> (!<span class="var">$dificuldade</span> || !<span class="var">$quantidade</span> || !<span class="var">$materias</span>) {
+    <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>([<span class="str">'mensagem'</span> => <span class="str">'Dados inválidos'</span>], <span class="num">422</span>);
+  }
+
+  <span class="cmt">// Buscar questões aleatórias do banco</span>
+  <span class="var">$questoes</span> = <span class="cls">Questao</span>::<span class="fn">where</span>(<span class="str">'dificuldade'</span>, <span class="var">$dificuldade</span>)
+    -><span class="fn">whereIn</span>(<span class="str">'materia'</span>, <span class="var">$materias</span>)
+    -><span class="fn">inRandomOrder</span>()
+    -><span class="fn">limit</span>(<span class="var">$quantidade</span>)
+    -><span class="fn">get</span>();
+
+  <span class="cmt">// Criar a prova</span>
+  <span class="var">$prova</span> = <span class="cls">Prova</span>::<span class="fn">create</span>([
+    <span class="str">'user_id'</span>           => <span class="var">$usuario</span>-><span class="fn">id</span>,
+    <span class="str">'dificuldade'</span>        => <span class="var">$dificuldade</span>,
+    <span class="str">'quantidade_questoes'</span>=> <span class="var">$quantidade</span>,
+    <span class="str">'materias'</span>           => <span class="fn">json_encode</span>(<span class="var">$materias</span>),
+    <span class="str">'finalizada'</span>         => <span class="kw">false</span>,
+  ]);
+
+  <span class="cmt">// Associar questões à prova</span>
+  <span class="var">$prova</span>-><span class="fn">questoes</span>()-><span class="fn">attach</span>(<span class="var">$questoes</span>-><span class="fn">pluck</span>(<span class="str">'id'</span>));
+
+  <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>([
+    <span class="str">'id'</span>                 => <span class="var">$prova</span>-><span class="fn">id</span>,
+    <span class="str">'perguntas'</span>          => <span class="var">$questoes</span>-><span class="fn">load</span>(<span class="str">'opcoes'</span>),
+    <span class="str">'finalizada'</span>         => <span class="kw">false</span>,
+    <span class="str">'dificuldade'</span>        => <span class="var">$dificuldade</span>,
+    <span class="str">'quantidade_questoes'</span>=> <span class="var">$quantidade</span>,
+    <span class="str">'materias'</span>           => <span class="var">$materias</span>,
+    <span class="str">'created_at'</span>         => <span class="var">$prova</span>-><span class="fn">created_at</span>,
+  ]);
+}
+<span class="op">?&gt;</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>📊 Métricas do Usuário — Lógica de aggregação</h3>
+      <pre><code><span class="op">&lt;?php</span>
+
+<span class="kw">public function</span> <span class="fn">metricas</span>(<span class="cls">Request</span> <span class="var">$request</span>) {
+  <span class="var">$userId</span> = <span class="var">$request</span>-><span class="fn">user</span>()-><span class="fn">id</span>;
+
+  <span class="cmt">// Total de provas</span>
+  <span class="var">$totalProvas</span> = <span class="cls">Prova</span>::<span class="fn">where</span>(<span class="str">'user_id'</span>, <span class="var">$userId</span>)-><span class="fn">count</span>();
+
+  <span class="cmt">// Buscar todas as respostas com a questão associada</span>
+  <span class="var">$respostas</span> = <span class="cls">Resposta</span>::<span class="fn">where</span>(<span class="str">'user_id'</span>, <span class="var">$userId</span>)
+    -><span class="fn">with</span>(<span class="str">'questao'</span>)-><span class="fn">get</span>();
+
+  <span class="var">$corretas</span>   = <span class="num">0</span>;
+  <span class="var">$erradas</span>    = <span class="num">0</span>;
+  <span class="var">$materias</span>   = [<span class="str">'portugues'</span>=><span class="num">0</span>, <span class="str">'matematica'</span>=><span class="num">0</span>,
+                  <span class="str">'biologia'</span>=><span class="num">0</span>, <span class="str">'fisica'</span>=><span class="num">0</span>, <span class="str">'quimica'</span>=><span class="num">0</span>];
+  <span class="var">$materiasErradas</span> = <span class="var">$materias</span>;
+
+  <span class="kw">foreach</span> (<span class="var">$respostas</span> <span class="kw">as</span> <span class="var">$r</span>) {
+    <span class="var">$opcaoCorreta</span> = <span class="var">$r</span>-><span class="fn">questao</span>-><span class="fn">opcoes</span>
+      -><span class="fn">where</span>(<span class="str">'opcao_correta'</span>, <span class="kw">true</span>)-><span class="fn">first</span>();
+
+    <span class="var">$mat</span> = <span class="fn">strtolower</span>(<span class="var">$r</span>-><span class="fn">questao</span>-><span class="fn">materia</span>);
+
+    <span class="kw">if</span> (<span class="var">$opcaoCorreta</span> && <span class="var">$r</span>-><span class="fn">resposta_dada</span> === <span class="var">$opcaoCorreta</span>-><span class="fn">letra</span>) {
+      <span class="var">$corretas</span>++;
+      <span class="kw">if</span> (<span class="fn">isset</span>(<span class="var">$materias</span>[<span class="var">$mat</span>])) <span class="var">$materias</span>[<span class="var">$mat</span>]++;
+    } <span class="kw">else</span> {
+      <span class="var">$erradas</span>++;
+      <span class="kw">if</span> (<span class="fn">isset</span>(<span class="var">$materiasErradas</span>[<span class="var">$mat</span>])) <span class="var">$materiasErradas</span>[<span class="var">$mat</span>]++;
+    }
+  }
+
+  <span class="kw">return</span> <span class="fn">response</span>()-><span class="fn">json</span>([
+    <span class="str">'total_provas'</span>         => <span class="var">$totalProvas</span>,
+    <span class="str">'total_questoes'</span>       => <span class="var">$corretas</span> + <span class="var">$erradas</span>,
+    <span class="str">'total_corretas_materia'</span>=> <span class="var">$materias</span>,
+    <span class="str">'total_erradas_materia'</span> => <span class="var">$materiasErradas</span>,
+  ]);
+}
+<span class="op">?&gt;</span></code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 9 – DEPLOY NO LINUX -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Deploy no Servidor Linux</h2>
+      <span class="section-tag tag-deploy">Deploy</span>
+    </div>
+
+    <div class="info-box warning">
+      <strong>⚠️ Pratique isso antes da competição!</strong> O deploy é onde muitos competidores perdem pontos por falta de prática. O servidor da competição usa Apache + PHP no Linux. Familiarize-se com os comandos abaixo.
+    </div>
+
+    <div class="card">
+      <h3>🖥️ Ferramentas de transferência (disponíveis na prova)</h3>
+      <ul>
+        <li><strong>FileZilla / WinSCP</strong> — transferência visual via SFTP (arrasta e solta arquivos)</li>
+        <li><strong>PuTTY</strong> — terminal SSH para executar comandos no servidor Linux</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📋 Checklist de Deploy — Execute nessa ordem</h3>
+      <pre><code><span class="cmt"># ── 1. Conectar ao servidor via PuTTY (SSH) ────────</span>
+<span class="cmt"># Host: IP do servidor  |  Port: 22  |  User: seu_usuario</span>
+
+<span class="cmt"># ── 2. Verificar versão do PHP ──────────────────────</span>
+php --version
+
+<span class="cmt"># ── 3. Instalar Composer no servidor (se necessário)</span>
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+<span class="cmt"># ── 4. Enviar seu projeto (FileZilla/WinSCP) ────────</span>
+<span class="cmt"># Destino: /var/www/html/TP_PHP/</span>
+
+<span class="cmt"># ── 5. Instalar dependências do Laravel ─────────────</span>
+cd /var/www/html/TP_PHP
+composer install --no-dev --optimize-autoloader
+
+<span class="cmt"># ── 6. Configurar permissões das pastas ─────────────</span>
+sudo chmod -R 775 storage bootstrap/cache
+sudo chown -R www-data:www-data storage bootstrap/cache
+
+<span class="cmt"># ── 7. Configurar o .env no servidor ────────────────</span>
+cp .env.example .env
+nano .env
+<span class="cmt"># Editar: APP_URL, DB_DATABASE, DB_USERNAME, DB_PASSWORD</span>
+
+<span class="cmt"># ── 8. Gerar a chave da aplicação ───────────────────</span>
+php artisan key:generate
+
+<span class="cmt"># ── 9. Rodar as migrations (criar tabelas) ───────────</span>
+php artisan migrate
+
+<span class="cmt"># ── 10. Criar usuário admin padrão ──────────────────</span>
+php artisan db:seed
+<span class="cmt"># (precisa ter criado um Seeder com admin@dev.com / pass@123!)</span>
+
+<span class="cmt"># ── 11. Configurar Apache (virtual host) ────────────</span>
+<span class="cmt"># O DocumentRoot deve apontar para: /var/www/html/TP_PHP/public</span>
+
+<span class="cmt"># ── 12. Testar no navegador ──────────────────────────</span>
+<span class="cmt"># http://IP_DO_SERVIDOR/TP_PHP/api/registro</span></code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Configuração do Apache Virtual Host</h3>
+      <pre><code><span class="cmt"># /etc/apache2/sites-available/000-default.conf</span>
+
+&lt;VirtualHost *:80&gt;
+  DocumentRoot /var/www/html/TP_PHP/public
+
+  &lt;Directory /var/www/html/TP_PHP/public&gt;
+    AllowOverride All
+    Require all granted
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+
+<span class="cmt"># Habilitar mod_rewrite (necessário para o Laravel)</span>
+sudo a2enmod rewrite
+sudo systemctl restart apache2</code></pre>
+    </div>
+
+    <div class="card">
+      <h3>🌱 Seeder — Criar o admin automaticamente</h3>
+      <pre><code><span class="cmt"># php artisan make:seeder AdminSeeder</span></code></pre>
+      <pre><code><span class="op">&lt;?php</span>
+<span class="cmt">// database/seeders/AdminSeeder.php</span>
+<span class="kw">use</span> App\Models\User;
+<span class="kw">use</span> Illuminate\Support\Facades\Hash;
+
+<span class="kw">public function</span> <span class="fn">run</span>() {
+  <span class="cls">User</span>::<span class="fn">firstOrCreate</span>(
+    [<span class="str">'username'</span> => <span class="str">'admin@dev.com'</span>],
+    [
+      <span class="str">'nome'</span>     => <span class="str">'Admin'</span>,
+      <span class="str">'username'</span> => <span class="str">'admin@dev.com'</span>,
+      <span class="str">'senha'</span>    => <span class="cls">Hash</span>::<span class="fn">make</span>(<span class="str">'pass@123!'</span>),
+      <span class="str">'is_admin'</span> => <span class="kw">true</span>,
+    ]
+  );
+}
+<span class="op">?&gt;</span></code></pre>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SEÇÃO 10 – PLANO DE ESTUDOS -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section" id="sec10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2>Plano de Estudos — 8 Semanas</h2>
+      <span class="section-tag tag-fundamento">Roteiro</span>
+    </div>
+
+    <div class="info-box info">
+      <strong>Estratégia:</strong> Cada semana tem <strong>~5 horas</strong> de estudo. As primeiras semanas ensinam o PHP e MySQL. A partir da semana 4 você já estará construindo partes reais do projeto da prova. Na semana 7-8, você simula a prova completa cronometrada.
+    </div>
+
+    <div class="timeline">
+
+      <div class="week-card">
+        <div class="week-label">Semana 1<span>PHP Básico</span></div>
+        <div class="week-content">
+          <h4>🐘 Fundamentos PHP</h4>
+          <ul>
+            <li>Instalar XAMPP + VS Code + extensões</li>
+            <li>Variáveis, tipos, operadores, strings</li>
+            <li>Arrays simples e associativos</li>
+            <li>If/else, foreach, while</li>
+            <li>Funções: criar, chamar, retornar</li>
+            <li><strong>Exercício:</strong> Criar um arquivo PHP que receba um JSON e imprima os campos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 2<span>PHP + MySQL</span></div>
+        <div class="week-content">
+          <h4>🗄️ Banco de Dados com PDO</h4>
+          <ul>
+            <li>Criar banco no phpMyAdmin manualmente</li>
+            <li>Conectar PHP ao MySQL via PDO</li>
+            <li>Executar INSERT, SELECT, UPDATE</li>
+            <li>Prepared statements (segurança)</li>
+            <li>password_hash e password_verify</li>
+            <li><strong>Exercício:</strong> Criar tabela de usuários e fazer o cadastro via PHP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 3<span>API REST Pura</span></div>
+        <div class="week-content">
+          <h4>🌐 API em PHP puro (sem framework)</h4>
+          <ul>
+            <li>Entender HTTP: métodos, status codes, headers</li>
+            <li>Ler body JSON, devolver JSON</li>
+            <li>Criar roteador simples</li>
+            <li>Implementar /registro e /login completos</li>
+            <li>Testar tudo com Postman</li>
+            <li><strong>Exercício:</strong> API funcionando com registro, login e logout</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 4<span>Laravel Intro</span></div>
+        <div class="week-content">
+          <h4>🚀 Primeiros passos com Laravel</h4>
+          <ul>
+            <li>Instalar Composer e criar projeto Laravel</li>
+            <li>Entender estrutura de pastas</li>
+            <li>Configurar .env com banco de dados</li>
+            <li>Criar primeira migration e model</li>
+            <li>Criar primeira rota e controller</li>
+            <li><strong>Exercício:</strong> Recriar o /registro em Laravel</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 5<span>Auth + Questões</span></div>
+        <div class="week-content">
+          <h4>🔐 Autenticação + Banco de Questões</h4>
+          <ul>
+            <li>Implementar login/logout com token no Laravel</li>
+            <li>Criar middleware de autenticação</li>
+            <li>Criar tabelas de questões e opções</li>
+            <li>Implementar endpoint de admin (banco de questões)</li>
+            <li>Cadastrar questões de teste via Postman</li>
+            <li><strong>Exercício:</strong> Sistema completo de autenticação + CRUD de questões</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 6<span>Provas</span></div>
+        <div class="week-content">
+          <h4>📝 Criação e Resposta de Provas</h4>
+          <ul>
+            <li>Criar tabelas de provas e respostas</li>
+            <li>Implementar endpoint de criação de prova (filtros)</li>
+            <li>Implementar responder questão</li>
+            <li>Implementar finalizar prova</li>
+            <li>Implementar consultar prova</li>
+            <li><strong>Exercício:</strong> Fluxo completo: criar prova → responder → finalizar</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 7<span>Métricas + Deploy</span></div>
+        <div class="week-content">
+          <h4>📊 Métricas + Deploy Linux</h4>
+          <ul>
+            <li>Implementar endpoint de métricas</li>
+            <li>Criar Seeder do admin padrão</li>
+            <li>Praticar deploy: FileZilla + PuTTY + Apache</li>
+            <li>Testar a API publicada no servidor</li>
+            <li><strong>Exercício:</strong> Fazer deploy completo e testar todos os endpoints</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-label">Semana 8<span>Simulado</span></div>
+        <div class="week-content">
+          <h4>⏱️ Simulado da Prova (4 horas)</h4>
+          <ul>
+            <li>Apagar o projeto e recomeçar do zero</li>
+            <li>Seguir o PDF da prova como se fosse o dia real</li>
+            <li>Usar o tempo: 4 horas cronometradas</li>
+            <li>Identificar o que ficou faltando</li>
+            <li>Repetir o simulado ao menos 1 vez</li>
+            <li><strong>Meta:</strong> Entregar pelo menos 6 dos 9 endpoints funcionando</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-box tip" style="margin-top:24px;">
+      <strong>🎯 Prioridade de pontos na prova:</strong> Implemente nesta ordem — (1) Registro, (2) Login, (3) Logout, (4) Banco de Questões (admin), (5) Criar Prova, (6) Responder, (7) Finalizar, (8) Consultar, (9) Métricas. Os primeiros são mais simples e garantem pontos. Nunca entregue um projeto vazio.
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>📚 Recursos Recomendados (gratuitos)</h3>
+      <table>
+        <thead><tr><th>Recurso</th><th>O que estudar</th></tr></thead>
+        <tbody>
+          <tr><td>php.net/manual/pt_BR</td><td>Documentação oficial em português</td></tr>
+          <tr><td>laravel.com/docs</td><td>Documentação oficial do Laravel</td></tr>
+          <tr><td>youtube: "Laravel API REST"</td><td>Ver projetos sendo construídos ao vivo</td></tr>
+          <tr><td>Zeal (offline)</td><td>Documentação do PHP e Laravel sem internet</td></tr>
+          <tr><td>Postman</td><td>Testar todos os endpoints conforme o PDF</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <div>Guia preparado para SENAI Skills — Modalidade 17: Tecnologias Web</div>
+  <div style="margin-top:6px; color:#374151;">PHP · Laravel · MySQL · Apache · Linux · Postman</div>
+</footer>
+
+</body>
+</html>
