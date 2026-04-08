@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if (isset($_POST["username"], $_POST["senha"])){
     $username = $_POST["username"];
     $senha = $_POST["senha"];
@@ -10,10 +12,14 @@ if (isset($_POST["username"], $_POST["senha"])){
     $resultado = $conexao->query($sql);
 
     if ($resultado->num_rows > 0) {
-        echo "O usuário existe.";
+        $_SESSION["usuario_logado"] = $username;
+
+        header("location: painel.php");
+        exit;
     } else {
         echo "Login ou senha incorretos.";
     }
+
 }
 
 ?>
