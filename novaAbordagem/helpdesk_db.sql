@@ -9,7 +9,7 @@ nome varchar(255)
 );
 
 insert into usuarios (login, senha, nome) values (
-"teste", "a1234", "nomeTeste"
+"UserTeste", "a1234", "nomeTeste"
 );
 
 create table chamados (
