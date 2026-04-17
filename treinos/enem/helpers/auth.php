@@ -20,7 +20,7 @@ function autenticar($pdo) {
     exit();
   }
 
-  return $usuario; // Retorna dados do usuário logado
+  return $usuario; 
 }
 
 function autenticarAdmin($pdo) {

@@ -2,7 +2,6 @@
 session_start();
 
 if (!isset($_SESSION["usuario_logado"])) {
-    // echo "Deu errado";
     header("Location: index.php");
     exit;
 }
