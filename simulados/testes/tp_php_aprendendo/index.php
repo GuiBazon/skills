@@ -11,7 +11,7 @@ if (isset($dados["nome"], $dados["username"], $dados["senha"])) {
     $nome = $dados["nome"];
     $user = $dados["username"];
     $pass = $dados["senha"];
-    
+
     $sql = "SELECT * FROM usuarios WHERE username = '$user' AND senha = '$pass'";
     $res = $conexao->query($sql);
 

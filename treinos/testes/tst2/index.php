@@ -24,11 +24,9 @@ if (isset($_POST['login'])) {
     $mysqli->query("INSERT INTO usuario(login, senha) values ($login, $senha)");
     printf("Insert feito na tabela usuario.\n");
 
-    /* Select queries return a resultset */
     $result = $mysqli->query("SELECT * FROM usuario");
     printf("Select returned %d rows.\n", $result->num_rows);
 
-    /* If we have to retrieve large amount of data we use MYSQLI_USE_RESULT */
     $result = $mysqli->query("SELECT * FROM usuario", MYSQLI_USE_RESULT);
 }
 

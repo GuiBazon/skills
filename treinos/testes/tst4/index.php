@@ -27,7 +27,7 @@ if (isset($_POST["nome"], $_POST["senha"])) {
         <label for="nome">Nome</label>
         <input type="text" name="nome" required>
         <label for="senha">Senha</label>
-        <input type="pass" name="senha" required>  
+        <input type="pass" name="senha" required>
         <button type="submit">Botao</button>
     </form>
 </body>

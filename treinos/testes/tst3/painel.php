@@ -10,5 +10,3 @@ printf("GET * FROM 'usuario'.\n");
 
 $result = $mysqli->query("SELECT * FROM usuario");
 echo "$result";
-
-?>

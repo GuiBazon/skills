@@ -19,4 +19,3 @@ if (isset($_POST["titulo"], $_POST["quantidade_livros"], $_POST["autor"])) {
     // Aqui você faria o INSERT do livro...
     echo json_encode(["mensagem" => "Livro cadastrado com sucesso"]);
 }
-?>

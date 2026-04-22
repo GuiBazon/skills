@@ -28,4 +28,5 @@ while ($row = $result->fetch_assoc()) {
         <button type="submit">post</button>
     </form>
 </body>
+
 </html>

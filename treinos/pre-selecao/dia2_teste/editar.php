@@ -1,9 +1,8 @@
 <?php
 require 'config.php';
 
-$id = $_GET['id']; // Pega o ID da URL
+$id = $_GET['id']; 
 
-// Lógica de Atualização (Quando clica em Salvar)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -18,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// Lógica de Leitura (Para preencher o formulário)
 $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
 $sql->bindValue(':id', $id);
 $sql->execute();
@@ -27,7 +25,11 @@ $usuario = $sql->fetch(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html>
-<head><title>Editar Usuário</title></head>
+
+<head>
+    <title>Editar Usuário</title>
+</head>
+
 <body>
     <h1>Editar Usuário</h1>
     <form method="POST">
@@ -40,4 +42,5 @@ $usuario = $sql->fetch(PDO::FETCH_ASSOC);
         <button type="submit">Atualizar</button>
     </form>
 </body>
+
 </html>

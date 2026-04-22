@@ -2,24 +2,24 @@
 session_start();
 require_once 'conexao.php';
 
-// Bloqueia o acesso se não estiver logado
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: index.php");
     exit;
 }
 
-// Busca os chamados ordenados do mais recente para o mais antigo (DESC)
 $sql = "SELECT * FROM Chamado ORDER BY data_registro DESC";
 $resultado = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Chamados</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h2>HelpDesk Express</h2>
@@ -56,11 +56,14 @@ $resultado = $conn->query($sql);
                         </tr>
                     <?php endwhile; ?>
                     <?php if ($resultado->num_rows == 0): ?>
-                        <tr><td colspan="5" style="text-align:center;">Nenhum chamado registrado ainda.</td></tr>
+                        <tr>
+                            <td colspan="5" style="text-align:center;">Nenhum chamado registrado ainda.</td>
+                        </tr>
                     <?php endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 
-$id = $_GET['id']; // Pega o ID da URL
+$id = $_GET['id']; 
 
 if ($id) {
     $sql = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
@@ -11,4 +11,3 @@ if ($id) {
 
 header("Location: index.php");
 exit;
-?>

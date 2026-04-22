@@ -22,4 +22,3 @@ if (isset($dados["nome"], $dados["username"], $dados["senha"])) {
         echo json_encode(["mensagem" => "Erro ao cadastrar, verifique os dados"]);
     }
 }
-?>

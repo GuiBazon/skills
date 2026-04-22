@@ -41,5 +41,3 @@ $stmt = $pdo->prepare(
   "UPDATE users SET token = NULL WHERE token = ?"
 );
 $stmt->execute([$token]);
-
-?>

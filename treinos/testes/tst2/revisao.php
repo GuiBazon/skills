@@ -2,7 +2,7 @@
 
 $equipamento = $_POST["equipamento"];
 
-var_dump($equipamento); 
+var_dump($equipamento);
 
 ?>
 

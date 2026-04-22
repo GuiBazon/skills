@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_POST["username"], $_POST["senha"])){
+if (isset($_POST["username"], $_POST["senha"])) {
     $username = $_POST["username"];
     $senha = $_POST["senha"];
 
@@ -20,11 +20,13 @@ if (isset($_POST["username"], $_POST["senha"])){
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP_PHP</title>
 </head>
+
 <body>
     <form method="POST">
         <label for="username">Username:</label>
@@ -34,4 +36,5 @@ if (isset($_POST["username"], $_POST["senha"])){
         <button type="submit">Submit</button>
     </form>
 </body>
+
 </html>

@@ -146,4 +146,3 @@ echo "<ul>
         <li>Estruturas condicionais (if, else, switch)</li>
         <li>Estruturas de repetição (for, while, do-while)</li>
       </ul>";
-

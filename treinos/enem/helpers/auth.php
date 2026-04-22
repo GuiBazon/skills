@@ -1,6 +1,7 @@
 <?php
 
-function autenticar($pdo) {
+function autenticar($pdo)
+{
   $headers = getallheaders();
   $token   = $headers['Authorization'] ?? null;
 
@@ -20,10 +21,11 @@ function autenticar($pdo) {
     exit();
   }
 
-  return $usuario; 
+  return $usuario;
 }
 
-function autenticarAdmin($pdo) {
+function autenticarAdmin($pdo)
+{
   $usuario = autenticar($pdo);
 
   if (!$usuario['is_admin']) {
@@ -34,5 +36,3 @@ function autenticarAdmin($pdo) {
 
   return $usuario;
 }
-
-?>
