@@ -1,54 +1,38 @@
 <?php
+require_once 'conexao.php';
 
-session_start();
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') exit;
 
-if (!isset($_SESSION["usuario_logado"])) {
-    header("location: index.php");
+$dados = lerInputJSON();
+$nome = $dados['nome'] ?? '';
+$username = $dados['username'] ?? '';
+$senha = $dados['senha'] ?? '';
+
+$codigo_secreto = $dados['codigo_secreto'] ?? '';
+$tipo_usuario = ($codigo_secreto === 'slakk') ? 'admin' : 'comum';
+
+if (empty($nome) || empty($username) || empty($senha)) {
+    http_response_code(422);
+    echo json_encode(["mensagem" => "Erro ao cadastrar, verifique os dados"]);
     exit;
-};
-
-if (isset($_POST["nome"], $_POST["email"], $_POST["username"], $_POST["senha"])) {
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $username = $_POST["username"];
-    $senha = $_POST["senha"];
-
-    $conexao = new mysqli("localhost", "aluno", "senai@604", "tp_php");
-    $sql = "INSERT INTO usuarios (nome, email, username, senha) values ('$nome', '$email', '$username', '$senha')";
-    $resultado = $conexao->query($sql);
 }
 
-?>
+$stmt = $conexao->prepare("SELECT id_usuario FROM usuarios WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+if ($stmt->get_result()->num_rows > 0) {
+    http_response_code(422);
+    echo json_encode(["mensagem" => "Erro ao cadastrar, verifique os dados"]);
+    exit;
+}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
+$stmt = $conexao->prepare("INSERT INTO usuarios (nome, username, senha, tipo) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $nome, $username, $senha, $tipo_usuario);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Usuario</title>
-</head>
-
-<body>
-    <h1>Registro de usuario</h1>
-    <form method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome">
-
-        <label for="email">Email:</label>
-        <input type="text" name="email">
-
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-
-        <label for="senha">Senha:</label>
-        <input type="text" name="senha">
-
-        <button type="submit">Enviar</button>
-
-        <br> <br>
-        <a href="acervo.php">Voltar para o acervo</a>
-    </form>
-</body>
-
-</html>
+if ($stmt->execute()) {
+    http_response_code(200);
+    echo json_encode(["mensagem" => "Cadastro realizado com sucesso"]);
+} else {
+    http_response_code(422);
+    echo json_encode(["mensagem" => "Erro ao cadastrar, verifique os dados"]);
+}
