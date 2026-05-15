@@ -3,7 +3,7 @@
 ## Como executar:
 1. Importe o arquivo sql/database_dump.sql no phpMyAdmin (banco: skills17)
 2. Configure a conexão em config/database.php (usuário root, senha vazia ou conforme ambiente)
-3. Acesse http://localhost/01_module_b/public/login.php
+3. Acesse http://localhost/01_module_b/public/login
 4. Senha: admin
 
 ## Funcionalidades implementadas:
