@@ -4,7 +4,7 @@
 │   ├── css/
 │   │   └── style.css            (opcional)
 │   ├── js/
-│   │   └── main.js           
+│   │   └── main.js              (nada ainda)
 │   └── uploads/                
 │
 ├── config/
