@@ -1,0 +1,11 @@
+XX_module_c/
+├── .htaccess
+├── index.php 
+├── funcoes.php
+├── templates/
+│   ├── cabecalho.php
+│   └── listagem.php
+├── css/
+│   └── style.css
+└── js/
+    └── script.js

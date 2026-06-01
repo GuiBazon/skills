@@ -1,0 +1,18 @@
+---
+title: Musée Gadagne
+summary: Instalado em uma mansão renascentista, o Musée Gadagne conta a história de Lyon através de séculos de arte e cultura.
+tags: [museu, historia, renascimento]
+cover: gadagne.jpg
+draft: false
+---
+O Musée Gadagne é um dos museus mais charmosos de Lyon, instalado em uma magnífica mansão renascentista do século XVI no coração do Vieux Lyon.
+
+O museu é dividido em duas seções principais: o Museu de História de Lyon e o Museu das Marionetes do Mundo.
+
+gadagne-patio.jpg
+
+O Museu de História de Lyon apresenta uma coleção que vai desde a época romana até os dias atuais, com destaque para a história da indústria da seda e da imprensa, setores nos quais Lyon foi pioneira na Europa.
+
+Já o Museu das Marionetes do Mundo possui um acervo de mais de 10 mil peças, incluindo marionetes tradicionais de diversos países, com destaque para o famoso Guignol, personagem criado em Lyon no início do século XIX.
+
+O pátio interno da mansão, com sua galeria de arcadas e o poço central, é um oásis de tranquilidade no agitado centro histórico.

@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /XX_module_c/
+
+# Se não for um arquivo real (css, js, imagem), manda pro index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

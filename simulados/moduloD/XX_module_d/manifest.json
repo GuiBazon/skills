@@ -1,0 +1,22 @@
+{
+  "name": "Lyon Mobile Web Service",
+  "short_name": "Lyon MWS",
+  "start_url": "/XX_module_d/",
+  "display": "standalone",
+  "theme_color": "#1c3e60",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/XX_module_d/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/XX_module_d/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

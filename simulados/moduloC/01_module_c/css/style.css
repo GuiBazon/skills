@@ -1,0 +1,364 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Módulo C – Lyon Heritage Sites
+   WorldSkills Web Technologies
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Reset & Base ──────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus {
+    color: #003d82;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ─── Container ──────────────────────────────────────────────────────────────── */
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+/* ─── Page Header (listagem) ─────────────────────────────────────────────────── */
+
+.page-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-feature-settings: "liga", "clig";
+}
+
+/* ─── Search Bar ─────────────────────────────────────────────────────────────── */
+
+.search-bar {
+    margin-bottom: 0.5rem;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 480px;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+#search-input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+}
+
+/* ─── Article List (listagem) ────────────────────────────────────────────────── */
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.article-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.article-item:hover {
+    border-color: #0056b3;
+    box-shadow: 0 2px 12px rgba(0, 86, 179, 0.1);
+}
+
+.article-item h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+    font-feature-settings: "liga", "clig";
+}
+
+.article-item h2 a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.article-item h2 a:hover,
+.article-item h2 a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.article-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.article-item p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.article-item p a:hover,
+.article-item p a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.folder-item {
+    border-left: 4px solid #0056b3;
+    background: #f4f8ff;
+}
+
+.folder-item h2 a::before {
+    content: "📁 ";
+    font-size: 1.1rem;
+}
+
+.no-results {
+    color: #777;
+    font-style: italic;
+    padding: 1rem 0;
+}
+
+/* ─── Article Full Page ──────────────────────────────────────────────────────── */
+
+.article-full {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.article-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.article-title {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+    line-height: 1.2;
+    font-feature-settings: "liga", "clig";
+}
+
+/* ─── Cover Image + Spotlight ────────────────────────────────────────────────── */
+
+.article-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    -webkit-mask-image: radial-gradient(circle 300px at center, black 30%, transparent 100%);
+    mask-image: radial-gradient(circle 300px at center, black 30%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    transition: -webkit-mask-image 0.05s, mask-image 0.05s;
+}
+
+/* ─── Article Content ────────────────────────────────────────────────────────── */
+
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #222;
+}
+
+/* Capitular: primeira letra do primeiro parágrafo */
+.article-content p:first-of-type::first-letter {
+    font-size: 3em;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.article-content p {
+    margin-bottom: 1rem;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.article-content img.content-img {
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.article-content img.content-img:hover {
+    opacity: 0.9;
+}
+
+/* Garante modal feche ao clicar na imagem ampliada */
+.modal-overlay img {
+    cursor: pointer;
+}
+
+/* ─── Sticky Aside (meta) ────────────────────────────────────────────────────── */
+
+.article-meta {
+    position: sticky;
+    top: 1rem;
+    width: 240px;
+    min-width: 240px;
+    padding: 1.25rem 1rem;
+    background: #f4f8ff;
+    border: 1px solid #d6e4f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-shrink: 0;
+}
+
+.meta-date {
+    margin-bottom: 0.75rem;
+}
+
+.meta-tags {
+    margin-bottom: 0.75rem;
+}
+
+.meta-tags strong {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.tag-link {
+    display: inline-block;
+    background: #e6edf5;
+    color: #0056b3;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin: 0.15rem 0.15rem;
+    transition: background 0.2s;
+}
+
+.tag-link:hover,
+.tag-link:focus {
+    background: #0056b3;
+    color: #fff;
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.draft-badge {
+    display: inline-block;
+    background: #cc0000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+/* ─── Modal ───────────────────────────────────────────────────────────────────── */
+
+.modal-overlay {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+.modal-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* ─── Acessibilidade ─────────────────────────────────────────────────────────── */
+
+:focus-visible {
+    outline: 3px solid #0056b3;
+    outline-offset: 2px;
+}
+
+/* ─── Responsivo ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .article-full {
+        flex-direction: column;
+    }
+
+    .article-meta {
+        position: static;
+        width: 100%;
+        min-width: unset;
+    }
+
+    .article-title {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1rem 0.75rem 2rem;
+    }
+
+    #search-input {
+        max-width: 100%;
+    }
+}

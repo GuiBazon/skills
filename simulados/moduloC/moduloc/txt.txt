@@ -1,0 +1,7 @@
+XX_module_c/
+├── .htaccess
+├── index.php          (roteador + lógica principal ~150 linhas no total)
+├── css/
+│   └── style.css
+└── js/
+    └── script.js
