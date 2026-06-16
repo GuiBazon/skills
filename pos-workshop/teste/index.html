@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldSkills - Photo Slideshow Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+</head>
+<body>
+
+    <aside id="sidebar">
+        <h2>Painel de Controle</h2>
+        <hr>
+        
+        <div class="control-group">
+            <label for="mode-select">Modo de Operação</label>
+            <select id="mode-select">
+                <option value="manual">Controle Manual (Setas)</option>
+                <option value="auto">Reprodução Automática (Loop)</option>
+                <option value="random">Reprodução Aleatória (Infinito)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="theme-select">Tema Ativo</label>
+            <select id="theme-select">
+                <option value="theme-a">Tema A: Direto</option>
+                <option value="theme-b">Tema B: Deslizar Lateral</option>
+                <option value="theme-c">Tema C: Cascata Vertical</option>
+                <option value="theme-d">Tema D: Pilha de Fotos</option>
+                <option value="theme-e">Tema E: Porta 3D</option>
+                <option value="theme-f">Tema F: Zoom Dinâmico</option>
+            </select>
+        </div>
+
+        <button id="btn-samples" class="btn-primary">Carregar Fotos de Amostra</button>
+        <button id="btn-fullscreen" class="btn-secondary">Tela Cheia</button>
+
+        <div class="order-section">
+            <h3>Ordenação das Fotos</h3>
+            <p class="hint">Arraste e solte para reordenar</p>
+            <ul id="photo-sortable-list"></ul>
+        </div>
+    </aside>
+
+    <main id="slideshow-viewport" class="theme-a">
+        <div id="drop-zone">
+            <div class="drop-message">
+                <svg width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/></svg>
+                <p>Arraste e solte fotos aqui</p>
+            </div>
+            <input type="file" id="file-fallback" multiple accept="image/*">
+        </div>
+        
+        <div id="stage"></div>
+    </main>
+
+    <div id="command-hud" class="hidden">
+        <div class="hud-box">
+            <input type="text" id="hud-search" placeholder="Digite um comando... (Use as setas ↑ ↓ e Enter)">
+            <ul id="hud-options">
+                <li data-cmd="mode-manual" class="active">Mudar para o modo de controle manual</li>
+                <li data-cmd="mode-auto">Mudar para o modo de reprodução automática</li>
+                <li data-cmd="mode-random">Mudar para o modo de reprodução aleatória</li>
+                <li data-cmd="theme-a">Mudar para o tema A</li>
+                <li data-cmd="theme-b">Mudar para o tema B</li>
+                <li data-cmd="theme-c">Mudar para o tema C</li>
+                <li data-cmd="theme-d">Mudar para o tema D</li>
+                <li data-cmd="theme-e">Mudar para o tema E</li>
+                <li data-cmd="theme-f">Mudar para o tema F</li>
+            </ul>
+            <div class="hud-footer">Pressione <kbd>ESC</kbd> para fechar</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
