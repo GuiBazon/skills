@@ -1,0 +1,314 @@
+
+
+WSC2024_TP17_actual_en 
+Test Project 
+Module B Products Management
+Web Technologies 
+I
+ndependent Test Project Designer: Thomas Seng Hin Mak SCM 
+Independent Test Project Validator: Fong Hok Kin 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+2 of 9 
+Contents 
+Introduction ...................................................................................................................................................... 3 
+Description of project and tasks ..................................................................................................................... 3 
+Admin access ...................................................................................................................................................... 3 
+Managing Companies ......................................................................................................................................... 3 
+Managing Products ............................................................................................................................................. 4 
+JSON API Outputs ............................................................................................................................................... 5 
+JSON API Example Outputs.................................................................................................................................. 6 
+Public-facing Pages ............................................................................................................................................. 7 
+Instructions to the Competitor ....................................................................................................................... 9 
+Database and model creation consideration ........................................................................................................ 9 
+Other ................................................................................................................................................................. 9 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+3 of 9 
+Introdução
+Vamos criar um sistema de gerenciamento para um administrador de escritório (conhecido como "admin") para 
+gerenciar alguns produtos fabricados na França. Os produtos pertencem às empresas. O administrador também 
+gerenciará os dados associados da empresa. Somente o administrador pode visualizar e gerenciar essas visualizações 
+de listagem e edição de empresas e produtos. 
+Cada registro de produto vem com um número identificador exclusivo, chamamos de Número Global de Item 
+Comercial (GTIN). Como informação básica, o GTIN é desenvolvido pela organização internacional GS1. 
+Por outro lado, existem páginas voltadas para o público. Eles são: 
+•Página de verificação em massa do GTIN público
+•Página pública do produto
+Descrição de projetos e tarefas 
+Nes
+t
+e projeto, criamos  um sistema de gerenciamento de empresas e produtos para um ad ministrador gerenciar esses 
+produtos fabricados na França. 
+Ele contém páginas da Web de gerenciamento para listar e editar os registros. E API JSON para consultar e ler os dados 
+também. 
+Este projeto deve ser acessível em http://wsXX.worldskills.org/XX_module_b/, onde XX é o número do assento. 
+Acesso de administrador 
+A página de login do administrador está no caminho '/XX_module_b/login'. A página de login solicita uma senha para 
+autenticar o acesso. Uma senha "admin" pode ser usada para acessar o sistema de gerenciamento de administração. 
+Como um protótipo de produto para um trabalho de 3 horas. Não exigimos autenticação robusta. O sistema de 
+gerenciamento usa verificação simples baseada em senha. 
+A tarefa é criar um sistema de gestão de empresas e produtos. 
+Dado que o tempo constante, focamos no protótipo das empresas e produtos registrando o gerenciamento e a   prova de 
+conceito de exibição do produto em uma página pública. 
+Acessar as funções de edição e gerenciamento de produtos sem login resulta no erro 401. 
+Empresas Gestoras 
+Somente o administrador pode listar e gerenciar as empresas. 
+O administrador pode clicar e visualizar uma determinada empresa na lista de empresas. Em cada página da empresa, o 
+administrador pode visualizar os produtos associados. 
+O administrador também pode criar novas empresas ou atualizar as informações das empresas existentes. 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+4 of 9 
+Aqui estão os dados que gostaríamos de armazenar e gerenciar para cada empresa: 
+•Nome da empresa
+•Endereço da empresa
+•Número de telefone da empresa
+•endereço de e-mail da empresa
+•Informações do proprietário:
+•Nome do proprietário
+•número de celular do proprietário
+•endereço de e-mail do proprietário
+•Informações de contato
+•Nome do contato
+•número de celular do contato
+•endereço de e-mail do contato
+Desativando empresas 
+O administrador pode marcar uma empresa como desativada. 
+Quando uma empresa é desativada, todos os produtos associados são marcados como ocultos. Deve haver uma lista 
+separada para listar empresas desativadas. 
+Ninguém deve ser capaz de excluir nenhum registro da empresa da interface da web. 
+Gerenciando produtos 
+Existem diferentes campos em cada produto, um que vale a pena destacar é o GTIN. 
+Neste projeto, simplificamos o GTIN para ser qualquer número com 13 ou 14 dígitos. Pode ser qualquer sequência de 
+números, desde que sejam únicos para cada produto. Valide este formato GTIN após o envio do formulário, por meio 
+da validação do lado do servidor. 
+Listando Produtos
+O administrador deve ser capaz de listar e gerenciar produtos. 
+Quando o a
+dministrador acessa o /XX_module_b/products, o administrador pode ver a lista d e todos os produtos. 
+O administrador pode acessar e gerenciar um determinado produto clicando no registro do produto na lista ou 
+acessando o seguinte caminho: /XX_module_b/products/[GTIN]. [GTIN] é o  marcador do campo GTIN. 
+Por exemplo, dado um produto com GTIN 3000123456789, acessar o 
+/XX_module_b/products/3000123456789 será a página de ger  enciamento de produtos para este determinado 
+produto. 
+Ocultar e excluir produtos 
+O administrador pode marcar produtos como ocultos. 
+Ou um produto fica oculto quando a empresa associada é marcada como desativada. O administrador pode excluir 
+permanentemente produtos ocultos. 
+Criando novos produtos 
+O administrador pode visualizar o formulário de criação de produto acessando /products/new e pode salvar produtos 
+recém-criados no banco de dados. 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+5 of 9 
+ Os produtos têm duas línguas da informação, inglês e francês. 
+Para produtos, temos os seguintes dados para armazenar: 
+•nome
+•nome em francês
+•GTIN (Número de Item Comercial Global)
+•descrição, pode ser várias linhas de texto.
+•descrição em francês
+•Nome da marca do produto
+•País de origem do produto
+•Peso bruto do produto (com embalagem)
+•Peso do con
+teúdo líquido do produto
+•unidade 
+de peso do produto
+Upload de imagens de produtos 
+Pode haver uma imagem associada a cada produto. O administrador pode carregar e alterar esta imagem ou remover as 
+imagens carregadas. 
+Quando nenhuma imagem é carregada, há uma imagem de espaço reservado padrão. 
+Saídas da API JSON 
+Os dados podem ser gerados no formato JSON ao acessar GET /XX_module_b/products.json. Ao listar os produtos, a 
+API mostrará uma estrutura de paginação. 
+Um único produto pode ser consultado via JSON por GET /XX_module_b/products/[GTIN].json, em que o GTIN é 
+dinâmico. 
+A API do produto retorna o status de rede 404 ao acessar um produto inexistente ou um produto oculto. O JSON da 
+lista de produtos permite a consulta usando a palavra-chave, por GET 
+/XX_module_b/products.json?query=PALAVRA-CHAVE. A lista deve mostrar produtos com nome, ou nome em 
+francês, ou descrição, ou descrição em francês, que contém a PALAVRA-CHAVE. 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+6 of 9 
+Saídas de exemplo de API JSON 
+Exemplo de saída da empresa 
+{ 
+  "compa
+nyName": "Euro Expo", 
+  "companyAddress": " Boulevard de l'Europe, 69680 Chassieu, France", 
+  "companyTelephone": "+33 1 41 56 78 00", 
+  "compa
+nyEmail": "mail.customerservice.hdq@example.com", 
+  "owner": { 
+    "name": "Benjamin Smith", 
+    "mobileNumber": "+33 6 12 34 56 78", 
+    "email": "b.smith@example.com " 
+  }, 
+  "contact": { 
+    "name": "Marie Dubois", 
+    "mobileNumber": "+33 6 98 76 54 32", 
+    "email": "m.dubois@example.com " 
+  } 
+} 
+Exemplo de saída do produto 
+{ 
+    "nam
+e": { 
+      "en": "Organic Apple Juice", 
+      "fr": "Jus de pomme biologique" 
+    }, 
+    "description": { 
+      "en": "Our organic apple juice is pressed from 100% fresh organic apples, with no added sugars or preservatives. Rich in vitamin C and 
+antioxidants, it's an ideal choice for your daily healthy diet.", 
+      "fr": "Notre jus de pomme biologique est pressé à partir de 100% de pommes biologiques fraîches, sans sucre ajouté ni conservateurs. 
+Riche en vitamine C et en antioxydants, c'est le choix idéal pour votre alimentation quotidienne saine." 
+    }, 
+    "gtin": "03000123456789", 
+    "brand": "Green Orchard", 
+    "countryOfOrigin": "France", 
+    "weight": { 
+      "gross": 1.1, 
+      "net": 1.0, 
+      "unit": "L" 
+    }, 
+    "company": { 
+      "companyName": "Euro Expo", 
+      "companyAddress": " Boulevard de l'Europe, 69680 Chassieu, France", 
+      "companyTelephone": "+33 1 41 56 78 00", 
+      "compa
+nyEmail": "mail.customerservice.hdq@example.com", 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+7 of 9 
+      "owner": { 
+        "name": "Benjamin Smith", 
+        "mobileNumber": "+33 6 12 34 56 78", 
+        "email": "b.smith@example.com " 
+      }, 
+      "contact": { 
+        "name": "Marie Dubois", 
+        "mobileNumber": "+33 6 98 76 54 32", 
+        "email": "m.dubois@example.com " 
+      } 
+    } 
+} 
+Exemplo de produtos JSON 
+{ 
+  "
+data": [ 
+{ 
+ (Same as single product JSON structure) 
+  }, 
+{ 
+  (Same as single product JSON structure) 
+ }, 
+  ], 
+  "pagination": { 
+  "current_page": 1, 
+    "total_pages": 5, 
+    "per_page": 10, 
+  "next_page_url": "http://wsXX.worldskills.org/XX_module_b/products.json?page=2", 
+    "prev_page_url": null 
+  } 
+} 
+Páginas voltadas para o público 
+H
+á duas páginas vol
+tadas para o público, elas são a página de verificação em massa do GTIN e a página pública do 
+produto.
+Página de verificação em massa do GTIN público 
+Há uma página para validação em massa se determinados números GTIN estiverem registrados e forem válidos. 
+Qualquer usuário pode inserir vários códigos GTIN e enviar para ver o resultado da validação. 
+Um GTIN é válido quando existe no banco de dados e não está oculto. 
+A página usa uma área de texto para permitir que o usuário insira números GTIN em massa. Esses números são 
+separados por quebras de linha. Em seguida, a página deve verificar cada número GTIN e exibir uma lista de 
+resultados, mostrando se cada número GTIN é válido. 
+Se todos os números GTIN fornecidos forem válidos, um texto "Todos os válidos" separados e uma marca verde serão 
+exibidos na parte superior da página de resultados.  
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+8 of 9 
+Página pública de produtos 
+A página pública de um produto pode ser acessada acessando o /XX_module_b/01/[GTIN]. Onde o "01" é estático. A 
+página pública do produto mostra o seguinte campo obrigatório. E está em layout compatível com dispositivos móveis. 
+O campo obrigatório a ser exibido: nome da empresa, nome do produto, número GTIN, descrição do produto, imagem 
+do produto, peso com unidade, peso do conteúdo líquido com unidade. 
+O usuário pode escolher entre inglês e francês para a página pública do produto O atributo lang para a página, a parte 
+francesa e a parte em inglês está configurado corretamente. 
+
+Date: 21.08.24 
+WSC2024_TP17_MB_actual_en 
+Version: 1.0 
+© WorldSkills International 
+9 of 9 
+Instruções para o Competidor
+Considerações sobre a criação do banco de dados e modelos
+Gostaríamos de armazenar os dados das empresas e produtos no banco de dados. Por favor, considere a flexibilidade de 
+informações multilíngues para produtos. 
+Forneça o dump do banco de dados. O dump do    banco de dados deve conter restrições FK e colunas corretas. A 
+definição do tipo de colunas deve ser razoável.
+Forneça o esquema do diagrama ER.
+Por favor, considere a forma normal de banco de dados.
+O campo GTIN deve ser indexado. 
+Alguns dados de amostra foram fornecidos. Por favor, use-os e tenha alguns dados no banco de dados para facilitar a 
+avaliação. 
+Outros
+Você pode colocar seu projeto em uma subpasta ou porta diferente. Por favor, redirecione para o seu destino a partir do 
+caminho wsXX.worldskills.org/XX_module_b/ 
+O caminho mencionado neste documento pode ser relativo à sua subpasta. Por exemplo, ao mencionar a página de login 
+como /XX_module_b/login — dependendo da sua configuração real — pode ser realmente /XX_module_b/public/
+login, ou /XX_module_b/index.php/login ou em uma porta diferente, como http://wsXX.worldskills.org:3000/
+XX_module_b/login. 
+Forneça também um arquivo chamado 'expert_readme.txt' para incluir o guia de execução. Você deve fornecer esse 
+arquivo mesmo se usar o caminho de execução padrão. 
+Observe que, se você estiver usando o NodeJS, esteja ciente de que os arquivos node_modules para Windows (na estação 
+de trabalho) e Linux (no servidor) são diferentes. Usar uma pasta node_modules errada pode resultar em um erro 
+inesperado. 
+Este projeto será avaliado usando o navegador Firefox Developer Edition. 
+Resumo das pontuações
+Subcritérios Pontos 
+1 
+Admin 
+1.25 
+2 
+Base de dados 
+2.50 
+3 
+Empresas
+ (Admin)
+4.25 
+4 
+Produtos CRUD (Admin)
+7.75 
+5 
+Api de produtos
+4.50 
+6 
+Consulta e verificação de GTIN 
+1.75 
+7 
+Página do produto voltada para o público 
+1.50 

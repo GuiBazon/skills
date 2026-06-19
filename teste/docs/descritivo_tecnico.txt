@@ -1,0 +1,1099 @@
+
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+SÃO PAUL 
+DESCRITIVO TÉCNICO 
+#17 
+Tecnologias WEB 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+A  São  Paulo  Skills,  por  decisão  do  Comitê  de  Gestores  e  de  acordo  com  as  
+Regras da Competição, adotou os seguintes requisitos mínimos para a execução 
+desta ocupação na São Paulo Skills. 
+O Descritivo Técnico consiste em:  
+1 Introdução .................................................................................................. 5 
+1.1 Nome e descrição da ocupação ........................................................ 5 
+1.1.1 O nome dessa ocupação é: ........................................................... 5 
+1.1.2 Descrição da(s) função(ões) ou ocupação(ões) associada(s) ... 5 
+1.1.3 Número de competidores por equipe ........................................... 6 
+1.1.4 Limite de idade dos competidores ................................................ 7 
+1.2 Relevância e uso deste documento ................................................. 7 
+1.3 Documentos relacionados ................................................................ 7 
+2 Especificação de padrões da São Paulo Skills ...................................... 7 
+2.1 Observações gerais sobre o WSOS ................................................. 7 
+2.2 Especificação de padrões da São Paulo Skills ............................... 9 
+3 Estratégia e especificação de avaliação ............................................... 16 
+3.1 Orientações gerais ........................................................................... 16 
+4 Esquema de pontuação .......................................................................... 17 
+4.1 Orientações gerais ........................................................................... 17 
+4.2 Critérios de avaliação ...................................................................... 18 
+4.3 Subcritérios de avaliação ................................................................ 19 
+4.4 Aspectos ........................................................................................... 19 
+4.5 Avaliação e marcação ...................................................................... 19 
+4.6 Avaliação e pontuação usando medição ....................................... 20 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+4.7 Avaliação e pontuação usando julgamento .................................. 20 
+4.8 O uso de medição e julgamento ..................................................... 21 
+4.9 Conclusão da especificação de avaliação da ocupação .............. 21 
+5 O projeto teste ....................................................................................... 222 
+5.1 Observações gerais ......................................................................... 22 
+5.2 Formato/Estrutura dos projetos teste ............................................ 23
+ 
+5.3 Requisitos do projeto teste ........................................................... 224 
+5.4 Coordenação e desenvolvimento do projeto teste ....................... 24 
+5.4.1 Quem desenvolve os projetos teste/módulos ......................... 255 
+5.4.2 Quando os projetos testes são desenvolvidos ......................... 25 
+5.5 Revisão e verificação inicial do projeto teste ................................ 27 
+5.6 Validação do projeto teste .............................................................. 27 
+5.7 Seleção do projeto teste .................................................................. 28 
+5.8 Divulgação do projeto teste ............................................................ 29 
+5.9 Coordenação do projeto teste (preparação para competição) .... 29 
+5.10 Mudança do projeto teste na competição ...................................... 29 
+6 Comunicação e gerenciamento da ocupação ...................................... 30 
+6.1 Fórum de discussão ........................................................................ 30 
+6.2 Informações do competidor ............................................................ 30 
+6.3 Gerenciamento diário ...................................................................... 30 
+7 Requisitos de segurança específicos da ocupação ............................. 31 
+8 Materiais e equipamentos ...................................................................... 31 
+8.1 Lista de infraestrutura ..................................................................... 31 
+8.2 Caixa de ferramentas do competidor ............................................. 31 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+8.3 Caixa de ferramentas do competidor ............................................. 31 
+8.4 Materiais e equipamentos proibidos na área da ocupação .......... 32 
+9 Regras específicas da ocupação ........................................................... 33 
+10 Seletivas ............................................................................................... 37 
+10.1 Local de aplicação ........................................................................... 37 
+10.2 Data da aplicação ............................................................................. 37 
+10.3 Infraestrutura para a seletiva .......................................................... 37
+ 
+ 
+  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+1    Introdução 
+1.1 Nome e descrição da ocupação 
+1.1.1 O nome dessa ocupação é: 
+Tecnologias Web. 
+1.1.2 Descrição da(s) função(ões) ou ocupação(ões) 
+associada(s) 
+Tecnologia  Web  engloba  muitas  habilidades  e  disciplinas  diferentes  no  design,  
+desenvolvimento,   produção   e   manutenção   de   sites   e   aplicações   web.   As   
+habilidades exigidas de um desenvolvedor web são diversas, muitas vezes a ponto 
+de  ser  difícil  para  um  profissional  se  destacar  em  todos  os  aspectos.  Como  
+resultado, uma equipe pode dividir o processo de design e desenvolvimento web, 
+com  cada  membro  possuindo  seus  próprios  pontos  fortes,  especialidades  e  
+funções no processo de desenvolvimento.  
+As tecnologias web envolvem a implementação de soluções específicas utilizando 
+tecnologias web que seguem as regras de negócio e os objetivos definidos pelo 
+cliente.  Desenvolvedores  web  constroem  um  relacionamento  profissional  com  
+seus clientes, interagindo com eles para desenvolver uma compreensão profunda 
+dos requisitos e convertê-los em uma especificação de site. Boas habilidades de 
+comunicação, aliadas a técnicas de pesquisa e ao entendimento do público-alvo, 
+dos mercados e das tendências, garantem a satisfação do cliente.  
+Após  a  conclusão  das  estratégias  de  conteúdo  do  site,  do  planejamento  da  
+arquitetura  do  sistema  e  do  trabalho  com  design  de  interface  do  usuário  (UI)  e  
+experiência do usuário (UX), o desenvolvedor web integra o site com ferramentas 
+e plataformas de terceiros. O processo de desenvolvimento é iterativo, no qual o 
+desenvolvedor  implementa  o  design,  cria  funcionalidades  dinâmicas  e  testa  e  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+depura  seu  trabalho  utilizando  uma  variedade  de  dispositivos.  Desenvolvedores  
+web também podem integrar diversas plataformas de redes sociais ao site.  
+Um  desenvolvedor  web  possui  muitas  oportunidades  de  trabalho.  Elas  podem  
+variar desde atuar como freelancer autônomo ou empreendedor até trabalhar em 
+agências de publicidade e empresas de desenvolvimento web, em diversos tipos 
+de organizações. As posições de desenvolvedor web podem ter um escopo amplo 
+ou  serem  especializadas  em  áreas  como  design  gráfico  para  web,  design  de  
+interface  do  usuário,  design  de  experiência  digital  do  usuário,  desenvolvimento  
+front-end,    desenvolvimento    back-end,    desenvolvimento    de    sistemas    de    
+gerenciamento   de   conteúdo,   bem   como   gestão   de   clientes   e   projetos.   
+Independentemente  da  especialização  escolhida,  o  desenvolvedor  web  podem  
+necessitar  de  acesso  a  recursos  de  Tecnologia  da  Informação  e  Comunicação  
+(TIC), bibliotecas de código aberto e frameworks. 
+Desenvolvedores  web  de  alto  desempenho  podem  possuir  habilidades  web  
+amplas  ou  especializadas.  Eles  devem  compreender  valores  artísticos,  ter  um  
+sólido   entendimento   de   design   de   interface   do   usuário   e   habilidades   de   
+programação,  além  de  assumir  responsabilidade  pessoal  por  se  manterem  
+constantemente  atualizados  com  as  tendências  e  tecnologias  web.  Também  
+devem ser responsivos às necessidades dos clientes e capazes de trabalhar tanto 
+em  equipes  estruturadas  quanto  não  estruturadas.  Essas  qualidades  permitem  
+que   o   desenvolvedor   web   contribua   e   aproveite   esse   aspecto   em   rápido   
+desenvolvimento da tecnologia moderna de comunicação. 
+1.1.3 Número de competidores por equipe 
+Tecnologias Web é uma competição de habilidades com um único competidor. 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+1.1.4 Limite de idade dos competidores 
+Para a São Paulo Skills 2026, os Competidores não poderão completar 21 anos 
+em 2026. 
+1.2 Relevância e uso deste documento 
+Este  documento  contém  informações  sobre  os  padrões  exigidos  para  participar  
+nesta ocupação,  bem  como  os  princípios  de  avaliação,  os  métodos  e  os  
+procedimentos estabelecidos para a competição. 
+Todos  os  Avaliadores  e  os  Competidores  devem  conhecer  e  compreender  este  
+Descritivo Técnico. 
+1.3 Documentos relacionados 
+Considerando   que   este   Descritivo   Técnico   contém   apenas   informações   
+específicas  da ocupação,  deve  ser  utilizado  juntamente  com  o  Regulamento  da  
+Competição,  Boletins  Técnicos  e  Recursos  online,  conforme  indicados  neste  
+documento. 
+2    Especificação de padrões da São Paulo Skills 
+2.1 Observações gerais sobre o WSOS 
+O Regulamento e Código de Ética da São Paulos Skills especifica o conhecimento, 
+a  compreensão  e  as  ocupações  específicas  que  constituem  as  boas  práticas  
+internacionais   no   desempenho   técnico   e   profissional.   Deve   refletir   uma   
+compreensão global compartilhada de quais funções ou dos papéis relacionados 
+a este trabalho que representam para o meio industrial e corporativo (SharePoint 
+> SãoPauloSkills). 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+A  competição  de  ocupações  visa  a  refletir  as  melhores  práticas  internacionais 
+conforme  descrito  pelo  Regulamento  e  Código  de  Ética  da  São  Paulo  Skills,  e  
+tanto  quanto  for  possível.  A  Especificação  de  Padrões  é,  portanto,  uma  diretriz  
+para  a  preparação  e  para  o  treinamento  necessários  para  a  competição  de  
+ocupações. 
+Na  competição  de  ocupações,  a  avaliação  do  conhecimento  e  da  compreensão  
+ocorrerá através da avaliação de desempenho. Não haverá testes separados de 
+conhecimento e compreensão. 
+A Especificação de Padrões é dividida em seções distintas com títulos e números 
+de referência. 
+É  atribuída  uma  porcentagem  das  notas  totais  a  cada  seção  para  indicar  sua  
+importância  relativa  dentro  da  Especificação  de  Padrões.  A  soma  de  todas  as  
+notas percentuais é 100. 
+O Esquema de Pontuação e o Projeto Teste avaliarão apenas as ocupações que 
+são  descritas  na  Especificação  de  Padrões.  Eles  refletirão  a  Especificação  de  
+Padrões   de   maneira   mais   abrangente   possível   dentro   das   restrições   da   
+Competição de cada Ocupação. 
+O Esquema de Pontuação e o Projeto Teste seguirão a designação de notas de 
+acordo com a Especificação de Padrões, dentro das limitações possíveis de serem 
+praticadas. Permite-se uma variação de cinco por cento, desde que essa variação 
+não distorça o coeficiente atribuído pela Especificação de Padrões. 
+Esses padrões são especificados pela São Paulo Skills em conformidade com a 
+World  Skills  Internacional,  ou  seja,  a  São  Paulo  Skills  seguirá  os  padrões  
+preestabelecidos para a competição na fase internacional. 
+  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+2.2 Especificação de padrões da São Paulo Skills 
+Seção Importância 
+relativa (%) 
+1 Organização e gestão do trabalho 5 
+ 
+O competidor precisa conhecer e entender:  
+• Princípios e práticas que permitem um trabalho produtivo 
+em equipe; 
+• Os   princípios   e   comportamento   dos   sistemas   de   
+computador; 
+• Os aspectos dos sistemas que contribuem para produtos, 
+estratégias e práticas sustentáveis; 
+• Como   tomar   iniciativas   e   ser   empreendedor   para   
+identificar,  analisar  e  avaliar  as  informações  de  uma  
+variedade de fontes; 
+• Como  identificar  várias  soluções  para  um  problema  e  
+oferecê-las   como   opções   contra   o   tempo   e   outras   
+restrições; 
+• Como  usar  as  ferramentas  disponíveis  existentes  para  
+criar soluções adequadas para um problema e requisito; 
+• Como otimizar a implantação de código; 
+ 
+ 
+O competidor deve ser capaz de: 
+• Resolver    problemas    comuns    de    web    design    e    
+desenvolvimento; 
+• Levar em consideração as limitações de tempo e prazos; 
+• Depurar e lidar com erros; 
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Usar  um  computador  ou  dispositivo  e  uma  variedade  de  
+pacotes de software; 
+• Aplicar técnicas de pesquisa e habilidades para se manter 
+atualizado com as diretrizes mais recentes da indústria; 
+• Aplicar  otimização  de  implantação,  como  carregamento  
+de página, com as diretrizes mais recentes do setor. 
+• Planejar  a  programação  de  produção  de  cada  dia  de  
+acordo com o tempo disponível; 
+• Incluir  imagens  vinculadas,  fontes,  arquivos  nativos  e  
+outros formatos de arquivo de produção ao arquivar; 
+• Use sistemas de controle de versão de software, como o 
+Git;
+ 
+2 Comunicação e relacionamento interpessoal 5 
+ O competidor precisa conhecer e entender: 
+• Como  resolver  problemas  de  comunicação,  incluindo  
+identificação do problema, pesquisa, análise, geração de 
+solução,  prototipagem,  teste  funcional  e  de  usuário  e  
+avaliação de resultados; 
+• Como expressar conceitos de design criando wireframes 
+e fluxogramas; 
+• Conceitos  e  técnicas  de  design  de  software,  incluindo  
+fluxograma e diagramas ER; 
+• Princípios  e  métodos  para  colaboração  com  equipes  e  
+colegas; 
+ 
+ O competidor deve ser capaz de: 
+• Ler e entender os documentos de especificações; 
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Ler  e  usar  o  código-fonte  fornecido  de  tecnologias  de  
+front-end e back-  end; 
+• Compreender  e  executar  testes  de  unidade  e  ponta  a  
+ponta em tecnologias front-end e back-end; 
+• Entregar   produtos   que   atendam   aos   requisitos   e   
+especificações do cliente; 
+• Reunir, analisar e avaliar as informações; 
+• Interpretar padrões e requisitos; 
+• Corresponder aos requisitos do cliente; 
+• Apresentar  conceitos  para  atender  aos  requisitos  de  
+negócios;; 
+3 Implementação de Design 25 
+ O competidor precisa conhecer e entender: 
+• Como  seguir  os  princípios  e  padrões  de  design  para  
+produzir interfaces  esteticamente  agradáveis,  criativas  e  
+acessíveis;  
+• Questões  relacionadas  aos  contextos  cognitivo,  social,  
+cultural, acessível, tecnológico e econômico para design; 
+• Utilizar vários formatos gráficos e quando usar o formato 
+apropriado em seu design; 
+• Diferentes mercados-alvo e os elementos de design que 
+satisfazem cada mercado; 
+• Protocolos   para   manter   uma   identidade   corporativa,   
+marca e guias de estilo; 
+• As  limitações  de  dispositivos  habilitados  para  Internet  e  
+resoluções de tela; 
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Padrões  do  World  Wide  Web  Consortium  (W3C)  para  
+HTML e CSS; 
+• Métodos de posicionamento e layout; 
+• Design de usabilidade e interação; 
+• Acessibilidade    e    comunicação    para    usuários    com    
+necessidades especiais; 
+• Compatibilidade entre navegadores; 
+• Compatibilidade com vários dispositivos; 
+• Search   Engine Optimization   (SEO)   e   otimização   de   
+desempenho; 
+• Como  incorporar  e  integrar  animações,  áudio  e  vídeo  
+onde necessário; 
+• Acessibilidade    e    comunicação    para    usuários    com    
+necessidades  especiais incluindo  os  padrões  do  World  
+Wide Web Consortium (W3C) para WCAG; 
+ O competidor deve ser capaz de: 
+• Criar,   analisar   e   desenvolver   resposta   visual   aos   
+problemas  de  comunicação,  incluindo  compreensão  da  
+hierarquia, tipografia, estética e composição; 
+• Criar, manipular e otimizar imagens para a internet; 
+• Identificar mercados-alvo e criar conceitos para projetos; 
+• Criar  designs  responsivos  que  funcionem  corretamente  
+em várias resoluções de tela e / ou dispositivos; 
+• Transformar ideias em designs esteticamente agradáveis 
+e criativos; 
+• Criticar os conceitos de rascunho, cores e escolhas de 
+Tipografia; 
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Criar   wireframes,   protótipos   interativos   e   design   de   
+interfaces    de    usuário    completas,    considerando    a    
+experiência do usuário; 
+• Criar códigos que estejam em conformidade e validem os 
+padrões W3C, incluindo as diretrizes de acessibilidade; 
+• Criar interfaces da web acessíveis e utilizáveis para uma 
+variedade de dispositivos e resoluções de tela; 
+• Usar  CSS  ou  outros  arquivos  externos  para  modificar  a  
+aparência das interfaces da web; 
+• Usar pré / pós-processadores CSS; 
+• Criar e atualizar interfaces da web para uma experiência 
+adequada do usuário e para auxiliar no desempenho dos 
+mecanismos de pesquisa; 
+• Usar CSS para desenvolver animações e interações para 
+interfaces de usuário; 
+4 Desenvolvimento Front-End 25 
+ O competidor precisa conhecer e entender: 
+• ECMAScript (JavaScript); 
+• Como integrar bibliotecas, estruturas e outros sistemas ou 
+recursos com JavaScript; 
+• Como   usar   processadores   pré   /   pós-processadores 
+JavaScript e fluxo de trabalho de execução de tarefas; 
+• Desenvolvimento front-end orientado a testes; 
+• Melhores práticas para implantação de aplicativos; 
+• Interface de linha de comando do Linux; 
+ 
+ O competidor deve ser capaz de:  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Criar  animações  e  funcionalidades  do  site  para  auxiliar  
+nas explicações do contexto e adicionar apelo visual; 
+• Criar  e  atualizar  o  código  JavaScript  para  aprimorar  a  
+funcionalidade, usabilidade e estética dos sites; 
+• Manipular dados e mídia personalizada com JavaScript; 
+• Criar código JavaScript modular e reutilizável; 
+• Escrever comentários de documentação em código; 
+• Usar bibliotecas JavaScript de código aberto; 
+• Manipular  elementos  gráficos  e  elementos  de  conteúdo  
+usando JavaScript; 
+• Escrever casos de teste e executar testes automatizados 
+para implementação de JavaScript; 
+• Lidar com erros no código, depurar código e corrigir bugs; 
+• Use a CLI do Linux para interagir com o servidor remoto 
+para implantar um aplicativo no servidor remoto; 
+• Documente  as  etapas  de  implantação  para  aplicativos 
+conforme necessário; 
+5 Desenvolvimento Back-End 40 
+ O competidor precisa conhecer e entender: 
+• Programação orientada a objetos; 
+• PHP; 
+• Bibliotecas  e  frameworks  de  código  aberto  do  lado  do  
+servidor; 
+• Como  se  conectar  a  servidores  por  meio  de  SSH  para  
+utilizar; 
+• bibliotecas e frameworks do lado do servidor; 
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Permissões e propriedade do sistema de arquivos; 
+• Como projetar e implementar bancos de dados; 
+• Servidor    sFTP    (Secure    File    Transfer    Protocol)    e    
+relacionamentos; 
+• Cliente- servidor e pacotes de software; 
+• Como  gerenciar  a  troca  de  dados  entre  o  servidor  e  os  
+sistemas cliente; 
+• Padrões  de  design  de  software  incluído,  MVC  (Model, 
+View e Controller); 
+• Segurança de aplicativos da Web; 
+• Desenvolvimento de back-end orientado a testes; 
+• Melhores práticas para implantação de aplicativos; 
+• Interface de linha de comando do Linux; 
+ O competidor deve ser capaz de: 
+• Manipular dados usando habilidades de programação; 
+• Proteger contra falhas de segurança; 
+• Integrar  com  o  código  existente  com  API  (interfaces  de  
+programação de aplicativos), bibliotecas e frameworks; 
+• Criar  ou  manter  bancos  de  dados  para  oferecer  suporte  
+aos requisitos do sistema; 
+• Criar códigos modulares e reutilizáveis; 
+• Escrever comentários de documentação em código; 
+• Escrever casos de teste e executar testes automatizados 
+para implementação de back-end; 
+• Lidar com erros no código, depurar código e corrigir bugs; 
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Use a CLI do Linux para interagir com o servidor remoto 
+para implantar um aplicativo no servidor remoto; 
+• Documente  as  etapas  de  implantação  para  aplicativos  
+conforme necessário; 
+• Configure o servidor web para determinados aplicativos; 
+• Utilize    o    pipeline    de    Integração    Contínua/Entrega    
+Contínua para implantar aplicações web; 
+ Total 100 
+ 
+3 Estratégia e especificação de avaliação 
+3.1 Orientações gerais 
+A  avaliação  é  baseada  na  Estratégia  de  Avaliação  da  São  Paulo  Skills.  A 
+Estratégia define os princípios e as técnicas com as quais as avaliações da São 
+Paulo Skills devem estar de acordo. 
+A prática de avaliação do Avaliador é o coração da São Paulo Skills. É por este 
+motivo que está sujeita à análise e ao desenvolvimento profissional contínuo. O 
+crescimento do conhecimento especializado na avaliação informará o uso futuro e 
+a direção dos principais instrumentos de avaliação utilizados pela São Paulo Skills: 
+o  Sistema  de  Classificação,  o  Projeto  de  Teste,  e  o  Sistema  Informatizado  de  
+Competições (CIS). 
+A  Avaliação  na  São  Paulo  Skills  se  divide  em  dois  tipos  amplos:  medição  e  
+julgamento.    Faz-se    referência    a    eles    como    medição    e    julgamento,    
+respectivamente. Para ambos os tipos de avaliação, o uso de referência explícita, 
+a fim de avaliar cada Aspecto, é essencial para garantir a qualidade.  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+O Esquema de Pontuação deve seguir os coeficientes dentro da Especificação de 
+Padrões. O Projeto Teste é o veículo de avaliação para a competição da ocupação 
+e também segue a Especificação de Padrões. O CIS possibilita o registro preciso 
+e em tempo hábil das notas e tem uma capacidade de apoio expansiva. 
+O  Esquema  de  Pontuação,  em  linhas  gerais,  conduzirá  o  processo  do  Projeto  
+Teste. Depois disso, o Esquema de Pontuação e o Projeto Teste serão projetados 
+e desenvolvidos através de um processo interativo, a fim de assegurar tanto que 
+se otimizem seus relacionamentos com a Especificação de Padrões quanto com 
+a Estratégia de Avaliação. Ambos são acordados entre os Avaliadores e enviados 
+à  Coordenação  da  São  Paulo  Skills  para  aprovação  em  conjunto,  a  fim  de  
+demonstrar sua qualidade e sua conformidade com a Especificação de Padrões. 
+Antes  da  submissão  para  aprovação  à  Coordenação  da  São  Paulo  Skills,  o  
+Esquema de Avaliação e o Projeto de Teste serão revisados pelos Gestores das 
+Ocupações   da   Coordenação   da   São   Paulo   Skills   para   se   beneficiar   das   
+capacidades do CIS.  
+4    Esquema de pontuação 
+4.1 Orientações gerais 
+Esta  seção  descreve  o  papel  do  Esquema  de  Pontuação,  como  os  Avaliadores  
+avaliarão o trabalho dos Competidores, conforme demonstrado pelo Projeto Teste, 
+e os procedimentos e as exigências de pontuação.  
+O  Esquema  de  Pontuação  é  um  instrumento  fundamental  da  São  Paulo  Skills,  
+considerando que conecta a avaliação aos padrões que representam a ocupação. 
+Ele  é  projetado  para  atribuir  notas  para  cada  um  dos  aspectos  avaliados  de  
+desempenho, de acordo com os coeficientes na Especificação de Padrões. 
+Ao refletir os coeficientes na Especificação de Padrões, o Esquema de Pontuação 
+estabelece  parâmetros  para  o  planejamento  do  Projeto  Teste.  Dependendo  da  
+natureza da ocupação e de suas necessidades de avaliação, pode ser adequado 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+desenvolver,  inicialmente,  o  Esquema  de  Pontuação  mais  detalhado,  como  um  
+guia  para  o  planejamento  do  Projeto  Teste.  De  outro  modo,  o  planejamento  do  
+projeto de Teste inicial pode ser baseado no Esquema de Pontuação descrito. A 
+partir  deste  ponto,  o  Esquema  de  Pontuação  e  o  Projeto Teste  devem  ser  
+desenvolvidos em conjunto.  
+A  seção  2.1  acima  indica  até  que  ponto  o  Esquema  de  Pontuação  e  o  Projeto  
+Teste podem divergir dos coeficientes dados entre a Especificação de Padrões, 
+caso não haja alternativa praticável.  
+O Esquema de Pontuação e o Projeto Teste devem ser desenvolvidos de acordo 
+com a Seção “Projetos Teste” do Regulamento da Competição.  
+Em  todos  os  casos,  o  Esquema  de  Pontuação  completo  e  aprovado  deve  ser  
+inserido  no  CIS  pelo  menos  oito  semanas  antes  da  Competição,  utilizando  a  
+planilha padrão do CIS ou outro método acordado.  
+4.2 Critérios de avaliação 
+O Os principais títulos do Esquema de Pontuação são os Critérios de Avaliação. 
+Esses   títulos   originam-se   juntamente   com   o   Projeto   Teste.   Em   algumas   
+ocupações, os Critérios de Avaliação podem ser semelhantes aos títulos de seção 
+na  Especificação  de  Padrões;  em  outras,  podem  ser  totalmente  diferentes.  
+Normalmente     haverá     entre     cinco     e     nove     Critérios     de     Avaliação.     
+Independentemente de os títulos combinarem ou não, o Esquema de Pontuação 
+deve refletir o coeficiente na Especificação de Padrões. 
+Os Critérios de Avaliação são criados pelas pessoas que desenvolvem o Esquema 
+de Pontuação,  que  são  livres  para  definir  os  critérios  que  considerem  os  mais  
+apropriados  para  a  avaliação  e  pontuação  do  Projeto  Teste.  Cada  Critério  de  
+Avaliação é definido por uma letra (A-I).  
+O Formulário Resumo de Pontuação gerado pelo CIS contará com uma lista de  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+critérios  de  Avaliação.  As  notas  atribuídas  a  cada  critério  serão  calculadas  pelo  
+CIS. Essas notas serão a soma cumulativa de notas atribuídas a cada aspecto da 
+avaliação dentro do Critério de Avaliação.  
+4.3 Subcritérios de avaliação 
+Cada  Critério  de  Avaliação  é  dividido  em  um  ou  mais  Subcritérios.  Cada  
+Subcritério se torna o título para um formulário de pontuação da São Paulo Skills. 
+Cada formulário de pontuação (Subcritério) lista os Aspectos a serem avaliados e 
+pontuados de forma por medição ou por julgamento, ou por ambas.  
+Cada  formulário  de  pontuação  (Subcritério)  contém  Aspectos  subjetivos  ou  
+objetivos  a  serem  pontuados.  Alguns  subcritérios  possuem  tanto  aspectos  
+objetivos quanto subjetivos, neste caso, haverá um formulário de pontuação para 
+cada um desses aspectos. 
+4.4 Aspectos 
+Cada  Critério  de  Avaliação  é  dividido  em  um  ou  mais  Subcritérios.  Cada  
+Subcritério se torna o título para um formulário de pontuação da São Paulo Skills. 
+Cada formulário de pontuação (Subcritério) lista os Aspectos a serem avaliados e 
+pontuados de forma por medição ou por julgamento, ou por ambas.  
+Cada  formulário  de pontuação  (Subcritério)  contém  Aspectos  subjetivos  ou  
+objetivos  a  serem  pontuados.  Alguns  subcritérios  possuem  tanto  aspectos  
+objetivos quanto subjetivos, neste caso, haverá um formulário de pontuação para 
+cada um desses aspectos. 
+4.5 Avaliação e marcação 
+Deverá haver uma equipe de avaliação para cada Subcritério, seja ele avaliado e 
+pontuado  por  Julgamento,  Medição  ou  ambos.  A  mesma  equipe  de  avaliação  
+deverá  avaliar  e  pontuar  todos  os  Competidores.  Nos  casos  em  que  isso  for  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+impraticável (por exemplo, quando uma ação precisar ser realizada por todos os 
+Competidores  simultaneamente  e  observada  durante  a  sua  execução),  um  
+segundo nível de avaliação e pontuação será implementado, com a aprovação da 
+Equipe de Gestão do Comitê de Competições. 
+As equipes de avaliação devem ser organizadas de forma a garantir que não haja 
+pontuação entre compatriotas em nenhuma circunstância. (Consulte a Seção 4.6.) 
+4.6 Avaliação e pontuação usando medição 
+Normalmente,  três  avaliadores(ras)  serão  responsáveis  pela  avaliação  de  cada  
+aspecto,    com    um    quarto    avaliador(ra)    supervisionando.    Em    algumas    
+circunstâncias,  a  equipe  poderá  se  organizar  em  duas  duplas,  para  avaliação  
+conjunta.  Salvo  indicação  em  contrário,  somente  a  nota  máxima  ou  zero  será 
+atribuída. Quando forem utilizados, os critérios para a atribuição de notas parciais 
+serão  claramente  definidos  dentro  do  aspecto.  Para  evitar  erros  de  cálculo  ou  
+transmissão, o CIS oferece diversas opções de cálculo automatizado, cujo uso é 
+obrigatório.    
+4.7 Avaliação e pontuação usando julgamento 
+A pontuação subjetiva segue a escala de 10 pontos abaixo. Para aplicar a escala 
+com rigor e consistência, a pontuação subjetiva deve ser realizada através de: 
+• Referências (critérios), a fim de orientar julgamento quanto a cada Aspecto; 
+• A escala 0-3 deverá indicar: 
+o 0: performance abaixo do padrão da indústria; 
+o 1: performance de acordo com o padrão da indústria; 
+o 2: performance de acordo e em aspectos específicos está acima do 
+padrão da indústria; 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+o 3: performance está completamente acima do padrão da indústria e é 
+considerada excelente. 
+Três Avaliadores irão julgar cada Aspecto com um quarto atuando como juiz 
+quando for necessário para evitar avaliação de competidor da própria unidade do 
+avaliador.
+ 
+4.8 O uso de medição e julgamento 
+As decisões relativas à seleção de critérios e métodos de avaliação serão feitas 
+durante a concepção da competição através do Esquema de Avaliação e Projeto 
+Teste. 
+4.9 Conclusão da especificação de avaliação da 
+ocupação 
+A SPSkills está comprometida com a melhoria contínua, incluindo a revisão de 
+limitações passadas e o desenvolvimento de boas práticas. A estratégia e os 
+procedimentos de avaliação de habilidades a seguir para esta competição levam 
+isso em consideração e explicam como o processo de avaliação será 
+gerenciado.  
+Os competidores receberão todos os materiais necessários antes do início de 
+cada módulo.  
+Critérios para marcação de medição 
+Pode haver quatro tipos diferentes de critérios de medição no Projeto Teste. Na 
+tabela abaixo está a explicação destes tipos: 
+  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Tipo Exemplo Pontuação 
+Máxima 
+Correto Incorreto 
+Pontuação 
+total ou zero 
+Mapa do site está 
+dinamicamente 
+apresentado no menu 
+0.50 0.50 0 
+Dedução da 
+pontuação 
+total 
+Código válido para HTML 
+1.0 Strict 
+[deduzir 0.25 pontos para 
+cada tipo de erro] 
+2.00 2.00 0-1.5 
+Avaliação de 
+Velocidade  
+Calculado com base no tempo em que os competidores 
+completam uma tarefa definida.  
+Cada avaliador(ra) atuará como membro de um grupo de módulo do Projeto de 
+Teste final. 
+Os avaliadores(ras) são divididos em grupos de módulos, com atribuição igual de 
+Avaliação  e  Pontuação  sempre  que  possível.  A  composição  dos  grupos  de  
+módulos é definida pelo Gerentes e Líderes da ocupação, com o objetivo de haver 
+um equilíbrio entre avaliadores(ras) novos e experientes em cada grupo. 
+Tecnologias como frameworks e Sistemas de Gerenciamento de Conteúdo (CMS) 
+de  código  aberto  são selecionadas  e  finalizadas  no  Fórum  de  Discussão  da 
+SPSkills durante a Semana de Preparação para a Competição. 
+Todas as tecnologias devem ter no mínimo três avaliadores(ras) que possuam um 
+alto nível de conhecimento da tecnologia. 
+5 O projeto teste 
+5.1 Observações gerais 
+As  Seções  3  e  4  regem  o  desenvolvimento  do  Projeto  Teste.  Estas  notas  são  
+complementares. 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Quer  se  trate  de  uma  única  entidade,  ou  uma  série  de  módulos  autônomos  ou  
+conectados, o Projeto Teste permitirá a avaliação das habilidades em cada seção 
+do Regulamento e Código de Ética da São Paulo Skills. 
+O objetivo do Projeto Teste é proporcionar oportunidades completas e equilibradas 
+para avaliação e marcação em toda a Especificação de Padrões, em conjunto com 
+o Esquema de Avaliação. A relação entre o Projeto Teste, Esquema de Avaliação 
+e Especificação de Padrões será um indicador chave de qualidade. 
+O Projeto Teste não abrangerá áreas fora da Especificação de Padrões ou afetará 
+a  totalização  de  pontuações  dentro  da  Especificação  de  Normas  além  das  
+circunstâncias indicadas na Seção 2. 
+O Projeto Teste permitirá que o conhecimento e a compreensão sejam avaliados 
+unicamente através de suas aplicações dentro do trabalho prático. 
+O  Projeto  Teste  não  avaliará  o  conhecimento  das  regras  e  regulamentos  da  
+competição. 
+Esta  Descrição  Técnica  anotará  quaisquer  problemas  que  afetem  a  capacidade  
+do  Projeto  Teste  para  suportar  toda  a  gama  de  avaliações  em  relação  à  
+Especificação de Padrões. Referência a Seção 2.1. 
+O  Projeto  de  Teste  permitirá  que  o  conhecimento  e  a  compreensão  sejam  
+avaliados  exclusivamente  por  meio  de  suas  aplicações  práticas.  O  Projeto  de  
+Teste não avaliará o conhecimento das regras e regulamentos da SPSkills. 
+Os módulos do Projeto de Teste devem ser desenvolvidos dentro da estrutura dos 
+Padrões Ocupacionais da WorldSkills. 
+5.2 Formato/Estrutura dos projetos teste 
+Os módulos do Projeto de Teste devem ser desenvolvidos dentro da estrutura dos 
+Padrões Ocupacionais da WorldSkills. 
+Cada módulo do projeto de teste de velocidade deve levar de 15 a 30 minutos. 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Para o módulo do projeto de teste de velocidade: 
+• Avaliadores(ras)  podem  submeter  módulos  de  miniprojetos  de  teste  de  
+velocidade. 
+• Para todos os módulos de Projetos de Teste de Velocidade submetidos, cada 
+mini tarefa será realizado uma validação, para os classificar em três níveis: 
+o 0,5 pontos: espera-se que leve menos de 15 minutos para terminar; 
+o 1 ponto: tempo estimado de conclusão: 15 a 25 minutos; 
+o 1,5 ponto: tempo estimado de conclusão: 30 minutos. 
+Para qualquer módulo de miniprojeto de teste que tenha um escopo maior que 1,5 
+pontos, os Líderes irão rejeitá-lo ou dividi-lo.    
+5.3 Requisitos do projeto teste 
+Os  Projetos  de  Teste  devem  refletir  os  propósitos,  estruturas,  processos  e  
+resultados  da  função  ocupacional  em  que  se  baseiam.  Eles  deveriam  ter  como  
+objetivo  ser  uma  versão  em  pequena  escala  dessa  função.  Antes  de  focar  nos  
+aspectos práticos, os líderes devem mostrar como o desenho do Projeto de Teste 
+fornecerá  oportunidades  completas,  equilibradas  e  autênticas  para  avaliação  e  
+classificação em todos os Padrões, conforme estabelecido na Seção 5.1. 
+5.4 Coordenação e desenvolvimento do projeto teste 
+A definição do projeto teste será feita da seguinte forma: 
+• Os  módulos  do  Projeto  Teste  devem  ser  desenvolvidos  no  âmbito  da 
+Especificação de Padrões do WorldSkills. Os Avaliadores responsáveis pelos 
+Módulos  liderarão  outros  Avaliadores  para  o  desenvolvimento  do  Projeto  
+Teste,   que   são   divulgados   e   utilizados   na   Competição.   A   Equipe 
+Gerenciamento  da  Ocupação  escolhe  os  Avaliadores  Responsáveis  pelos 
+Módulos assim que tiverem a informação dos Membros participantes.
+ 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Cada módulo do Projeto de Teste deverá conter os seguintes documentos: 
+• Projeto teste – documento entregue ao competidor com todos os detalhes da 
+execução da tarefa;  
+• Data files – arquivos a serem utilizado no desenvolvimento da prova;  
+• Data files para teste – arquivos para serem utilizados na correção da prova;  
+• Roteiro  de  teste  –  guia  para  padronizar  o  teste  dos  módulos  para  todos  os  
+competidores;  
+• Resumo  dos  Critérios  de  marcação  de  acordo  com  as  especificações  do  
+Descritivo Técnico e do sistema de marcação CIS – documento de definição 
+dos aspectos e suas pontuações;  
+• Guia de estilo e visão geral do projeto, caso seja aplicado;  
+• Guia  e  roteiro  para  entrega  dos  projetos  na  rede  –  documento  informativo  
+apresentado caminhos e nomenclaturas de pastas e arquivos. O guia de rede 
+deve ser distribuído um mês antes da competição. 
+5.4.1 Quem desenvolve os projetos teste/módulos 
+O projeto deve ser desenvolvido pelos avaliadores ou por um Designer/Empresa 
+Independente,   o   Avaliador Líder   e   o   Avaliador   Líder   Adjunto   serão os 
+responsáveis nas escolhas dos responsáveis pela elaboração do projeto teste, 
+tendo como base, conhecimento técnico e experiência. 
+Caso o projeto teste não esteja no padrão esperado poderá ser recusado pela 
+coordenação da modalidade.
+ 
+5.4.2 Quando os projetos testes são desenvolvidos 
+O Projeto Teste e os módulos são desenvolvidos de acordo com o seguinte 
+cronograma: 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Tempo Atividade 
+Quatro (4) meses 
+antes da competição 
+O Avaliador Líder e o Avaliador Líder Adjunto 
+definirão os avaliadores responsáveis ou grupo para 
+elaborar cada módulo específico, podendo também 
+escolher um elaborador externo. O Avaliador Líder e 
+o Adjunto poderão solicitar reuniões semanais para 
+acompanhar a elaboração dos projetos-teste. 
+Três (3) meses antes 
+da competição 
+Os primeiros rascunhos de cada módulo serão 
+publicados no fórum na respectiva área de fórum da 
+modalidade. 
+Dois (2) meses antes 
+da competição 
+Todos os avaliadores se reunirão para organização 
+dos projetos teste. Que será criado com base nas 
+funcionalidades apresentadas pelos avaliadores e 
+elaboradas conforme o item acima.  
+As provas finalizadas deverão passar por análise, 
+realizada pelo Avaliador Líder e Adjunto e realizar 
+todas as correções, ajustes e adequações para 
+alinhar totalmente com os padrões da última edição 
+da competição. 
+Um (1) meses antes 
+da competição 
+Será definido responsáveis por efetuar modificações 
+de até 30% em cada projeto-teste por outros 
+avaliadores. 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Uma (1) Semana 
+antes da competição 
+C-1 
+Validação das provas modificadas, CIS, Data files e 
+Roteiros de Testes pelos avaliadores das 
+competições 
+Na competição, no 
+início de cada dia de 
+competição 
+O projeto/módulos de teste é apresentado aos 
+competidores. 
+5.5 Revisão e verificação inicial do projeto teste 
+O Projeto Teste tem como objetivo criar um desafio para os Competidores que 
+reflita,  de  forma  genuína,  o  trabalho  de  um  profissional  de  destaque  em  uma  
+determinada ocupação. Ao fazer isso, o Projeto Teste pretende refletir a Ficha 
+de  Avaliação  e  representar  plenamente  o  Regulamento  e  Código  de  Ética  da  
+São  Paulo  Skills.  Desta  forma,  o  Projeto  Teste  será  único  em  seu  contexto,  
+propósitos, atividades e expectativas, 
+Visando   ajudar   na   concepção   e   desenvolvimento   do   Projeto   Teste,   foi   
+implementado um rigoroso processo de concepção e garantia de qualidade. Uma 
+vez  aprovado  pela  São  Paulo  Skills,  o  Desenvolvedor  de  Projeto  Teste  
+Independente    deve    indicar    um    ou    mais    indivíduos    independentes,    
+avaliadores(ras)  e  confiáveis,  primeiramente  para  rever  as  ideias  e  planos  do 
+Desenvolvedor,  e  posteriormente  para  conferir  o  Projeto  Teste  antes  da  
+validação. Um Consultor de Ocupação irá assegurar e coordenar este arranjo de 
+modo  a  garantir  a  pontualidade  e  o  rigor,  tanto  da  revisão  inicial,  quanto  da  
+verificação. 
+5.6 Validação do projeto teste 
+O Avaliador  Líder  e  o  Avaliador  Líder  Adjunto da  Competição  de  Habilidades  
+coordenam a validação do Projeto/módulos de Teste e garantirá que ele possa ser 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+concluído dentro das restrições de material, equipamento, conhecimento e tempo 
+dos competidores. 
+Os Avaliadores são  designados  aos  respectivos  grupos  de  módulos  antes  da  
+Competição. O Avaliador Líder e o Avaliador Líder Adjunto fornecerão assistência 
+aos grupos de módulos junto aos Avaliadores para a validação dos projetos. Os 
+grupos de módulos, o Avaliador Líder, o Avaliador Líder Adjunto e os Avaliadores 
+garantirão que:  
+• O módulo pode ser completado no tempo especificado;  
+• O  módulo  pode  ser  completado  com  o  material  fornecido  e  os  arquivos  de  
+mídia; 
+• Os esquemas de avaliação são adequadamente desenvolvidos;  
+• Os esquemas de avaliação são acompanhados de um Guia de Avaliação que 
+descreve especificamente como cada aspecto deve ser avaliado pelo grupo de 
+avaliadores;  
+• O Projeto Teste atende à Especificação de Padrões da São Paulo Skills;  
+5.7 Seleção do projeto teste 
+Visando  ajudar  na  concepção Dentro  de  cada  Grupo,  o  Avaliador  Responsável  
+pelo Módulo liderará o desenvolvimento de um ou mais Módulos do Projeto Teste. 
+Os avaliadores trabalharão em colaboração no desenvolvimento de seu módulo 
+de  Projeto  Teste.  Os  avaliadores  são  obrigados  a  participar  do  Fórum  de  
+Discussão para: 
+• Discutir e/ou votar; 
+• Perguntar; 
+• Responder; 
+• Desenvolver os módulos do Projeto Teste. 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Se um Avaliador estiver ausente do Fórum de Discussão no momento em que a 
+discussão e/ou a votação ocorrerem, o assunto específico não será levantado ou 
+votado novamente, de acordo com as Regras da Competição. Se os avaliadores 
+não estiverem participando da discussão no fórum de discussão, eles terão seus 
+privilégios de avaliação revogados e se tornarão observadores. 
+5.8 Divulgação do projeto teste 
+O Projeto Teste é distribuído através do site SGO (Sistema de gerenciamento da 
+Olímpiada) da seguinte forma: Próximo da competição atual. 
+Três meses antes do início da competição, as tecnologias a serem avaliadas no 
+projeto serão  divulgadas.  Por  exemplo,  se  o  Projeto  de  Teste  avaliar  o  uso  de  
+tecnologias de geolocalização, ele será divulgado três meses antes. 
+5.9 Coordenação do projeto teste (preparação para 
+competição) 
+A coordenação da elaboração dos critérios e subcritérios de avaliação do projeto 
+teste será feita pelo gestor da ocupação. 
+5.10   Mudança do projeto teste na competição 
+Após  a  divulgação  do  projeto  teste  para  todos  os  participantes,  caso  seja  
+necessário realizar ajustes ou modificações antes do início da competição, essas 
+serão divulgadas através de Boletim Técnico. 
+Durante a competição não poderão ser realizadas modificações.  
+Projeto de Teste desenvolvido por um Designer de Projeto de Teste Independente, 
+não  há  necessidade  de  alterações  no  Projeto  de  Teste/módulos  durante  a  
+Competição. 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+Exceções podem ser feitas devido a erros técnicos nos documentos do Projeto de 
+Teste e de acordo com as limitações de infraestrutura. 
+6 Comunicação e gerenciamento da ocupação 
+6.1     Fórum de discussão 
+Antes  da  Competição,  toda  discussão,  comunicação,  colaboração  e  tomada  de  
+decisão referente à ocupação deve ocorrer no Fórum de Discussões específico da 
+ocupação. Decisões relacionadas à ocupação e comunicação são válidas apenas 
+se ocorrerem no fórum. O Avaliador Líder será o moderador desse Fórum.
+ 
+6.2 Informações do competidor 
+Todas as informações para os Competidores devem ser fornecidas pelo seu 
+avaliador cadastrado e estarão disponíveis no site da São Paulo Skills 
+(https://sesisenaisp.sharepoint.com/sites/senaispskills). 
+Essas informações incluem: 
+• Regras da Competição 
+• Descritivos Técnicos 
+• Esquema de Pontuação 
+• Projetos teste 
+• Lista de infraestrutura 
+• Outras Informações relacionadas à Competição  
+6.3 Gerenciamento diário 
+O gerenciamento diário da ocupação durante a Competição é definido no Plano 
+de Gerenciamento da Ocupação que é criado pela Equipe de Gerenciamento da 
+Ocupação  liderada  pelo  Gestor.  A  Equipe  de  Gerenciamento  da  Ocupação  é  
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+composta pelo  Gestor  e  pelo  Avaliador  Líder.  O  Plano  de  Gerenciamento  da  
+Ocupação é desenvolvido progressivamente nos meses antes da Competição e é 
+finalizado na Competição por acordo com os Avaliadores. 
+7    Requisitos de segurança específicos da 
+ocupação 
+Consulte a região anfitriã sobre Saúde, Segurança e Política Ambiental e regras e 
+regulamentos específicos da região.  
+8    Materiais e equipamentos 
+8.1 Lista de infraestrutura 
+A Lista de Infraestrutura detalha todos os equipamentos, materiais e instalações 
+fornecidos   pelo   Organizador   da   Competição.   Este   documento   deverá   ser   
+disponibilizado dentro do Fórum da Modalidade. 
+Não  serão  fornecidas  ferramentas  ou  instrumentos  aos  competidores  além  dos 
+especificados    na    lista    de    infraestrutura,    salvo    quando    é    de    uso    
+comum/compartilhado e acordado previamente entre os Avaliadores. 
+8.2 Caixa de ferramentas do competidor 
+Não há necessidade de os competidores trazerem caixas de ferramentas para a 
+competição. 
+8.3 Materiais, equipamentos e ferramentas fornecidos 
+pelos competidores em suas caixas de 
+ferramentas 
+Os competidores podem trazer os seguintes itens: 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• Um máximo de um mouse; 
+• Mousepad; 
+• Um máximo de um teclado USB no idioma desejado pelos concorrentes. 
+Nota: Se o teclado trazido pelo concorrente não funcionar, um teclado padrão 
+será fornecido pelo organizador da competição; 
+• Arquivos de idiomas para o sistema operacional Microsoft para que o teclado 
+funcione corretamente; 
+• Fone de ouvido e cabo de extensão; 
+Todos os materiais trazidos pelos competidores não devem ter nenhum dispositivo 
+interno de armazenamento de memória. Os avaliadores e o chefe de oficina têm 
+o direito de desautorizar determinados equipamentos trazidos pelos competidores. 
+Não  será  permitido  a  utilização  de  equipamento  que  utilizem  a  possibilidade  de  
+registro de macros através de software. 
+Os competidores terão permissão para fornecer no dia da familiarização um USB 
+com  no máximo  de  30  músicas.  Toda  música  será  compilada,  verificada  e  
+compartilhada entre todos os competidores. 
+8.4 Materiais e equipamentos proibidos na área da 
+ocupação 
+• Dispositivos de armazenamento digital; 
+• Laptop ou computadores portáteis; 
+• Celulares; 
+• Câmeras digitais ou filmadoras; 
+• Pen-drive / MP3 player; 
+• Rádios / CD player; 
+• Agendas eletrônicas; 
+• Dispositivos de comunicação sem fio; 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+• CDs ou disquetes não aprovados pela equipe de avaliadores(as); 
+• Qualquer outro software não fornecido pela organização (a menos que seja 
+previamente apresentado e validado pelos avaliadores(as)); 
+• Itens comprados com modificações antes do início da competição. 
+• Relógios/pulseiras inteligentes e equipamentos similares 
+• Tablets; 
+• Dispositivos de Fotografia / Vídeo; 
+• Memory Sticks; 
+• Equipamentos Bluethooth/Wireless (fones de ouvido, teclados e mouses). O 
+equipamento não deve ter nenhum dispositivo interno de armazenamento de 
+memória. 
+9 Regras específicas da ocupação 
+As regras específicas de ocupação não podem contradizer ou ter prioridade sobre 
+as Regras da Competição. Elas fornecem detalhes específicos e clareza em áreas 
+que podem  variar  de  ocupação  para  ocupação.  Isso  inclui,  mas  não  se  limita  a  
+equipamentos de TI, dispositivos de armazenamento de dados, acesso à Internet, 
+procedimentos  e  fluxo de  trabalho,  além  de  gerenciamento  e  distribuição  de  
+documentação. 
+Tópico/Tarefa Regra específica 
+Uso da tecnologia - 
+USB, memory sticks 
+• Avaliadores -  Os avaliadores(as) podem trazer 
+USB / memory sticks para a sala de reunião dos 
+avaliadores, exceto quando houver documentos 
+ou discussões relevantes para a competição na 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+sala. USB / memory sticks podem ser levados 
+para fora da sala de reuniões no final de cada dia. 
+• Competidores -  Os competidores não podem 
+trazer USB / memory sticks para a área de 
+competição. 
+Uso de tecnologia 
+-  Laptops pessoais 
+• Avaliadores(as) -   Os avaliadores(as) podem trazer 
+computadores p ortáteis para a sala de reuniões, 
+exceto quando houver documentos ou discussões 
+relevantes para a competição na sala. Os laptops 
+serão autorizados a ser levados para fora da sala 
+de reuniões no final de cada dia. 
+• Competidores -  Não são permitidos laptops na 
+área de competição. 
+Uso de tecnologia - 
+Câmeras pessoais 
+• Avaliadores(as) -   Os avaliadores(as) podem trazer 
+câmeras para a sala de reuniões. exceto quando 
+houver documentos ou discussões relevantes 
+para a competição na sala. As câmeras serão 
+autorizadas a ser retiradas para fora da sala de 
+reuniões no final de cada dia. 
+• Competidores -  Não são permitidas câmeras na 
+área de competição até a conclusão da 
+competição no dia cinco. 
+Uso de tecnologia - 
+dispositivos móveis 
+• Avaliadores(as) -   Nenhum dispositivo eletrônico 
+deve ser levado para qualquer estação de 
+trabalho dos competidores em qualquer 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+circunstância, a menos que com a aprovação do 
+Avaliador Líder ou do Avaliador Líder Adjunto. 
+• Competidores - Nenhum dispositivo eletrônico 
+deve ser levado às estações de trabalho dos 
+competidores sob qualquer circunstância, a 
+menos que com a aprovação do Avaliador Líder 
+ou do Avaliador Líder Adjunto. 
+• O competidor não deve utilizar nenhum dispositivo 
+eletrônico durante as pausas para alimentação ou 
+saída para o banheiro. 
+Arquivo de origem 
+/ notas 
+• Competidores -  Nenhuma nota pode ser trazida 
+para a área de competição em qualquer 
+circunstância. Todas as notas feitas na estação 
+de trabalho do competidor devem permanecer na 
+mesa do competidor em todos os momentos. 
+Nenhuma nota pode ser tomada fora da área de 
+competição. 
+Armazenamento 
+interno 
+• Competidores -  Todos os materiais trazidos pelos 
+competidores não devem ter dispositivos internos 
+de armazenamento de memória. 
+• Os avaliadores e o Chefe de Oficina têm o direito 
+de desautorizar determinados equipamentos 
+trazidos pelos competidores. 
+Falha de 
+equipamentos 
+• Competidores -  Na ocorrência de falha do 
+equipamento os competidores devem notificar os 
+avaliadores imediatamente levantando a mão. Os 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+avaliadores tomarão nota do tempo que o 
+concorrente não pode fazer uso de seus 
+equipamentos. Qualquer tempo perdido devido à 
+falha do equipamento será fornecido ao 
+competidor no final do tempo padrão do Módulo. 
+• Nenhum tempo adicional será concedido para o 
+trabalho não salvo antes da falha do 
+equipamento. 
+Projetos de Teste Final 
+• Competidores –   Os projetos testes finais para 
+todos os competidores serão copiados e 
+disponibilizados a todos os competidores no final 
+da competição. 
+Internet Workstation 
+para Competidores 
+• Competidores –   Não será permitido o uso da 
+internet durante a competição nas estações 
+durante a execução da prova. Durante a pausa 
+para almoço não será permitido o uso da internet 
+em nenhum dispositivo. 
+Música 
+• Competidores -  Os competidores terão permissão 
+para fornecer no dia da familiarização um USB 
+que contenha um máximo de 30 músicas não 
+editadas. Toda música será compilada e 
+compartilhada entre todos os competidores. 
+Dia de Ambientação 
+• Competidores -  durante o dia da ambientação os 
+competidores não podem usar o tempo disponível 
+para trabalhar ou resolver quaisquer tarefas 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+relacionadas à competição. Antes de completar a 
+Ambientação, todos os concorrentes precisam 
+limpar seus respectivos computadores removendo 
+todos os arquivos criados / usados para testar os 
+softwares. Isso inclui a remoção de todos os 
+bancos de dados que foram criados. 
+Paradas 
+• Competidores -  Não será dado tempo extra aos 
+competidores que param de trabalhar durante o 
+horário da competição para ir ao banheiro ou para 
+aqueles que param para comer e / ou beber. 
+Quando o tempo for concluído, todos os 
+competidores devem parar todo o trabalho no seu 
+computador imediatamente. 
+10 Seletivas 
+Todas as Ocupações da São Paulo Skills podem vir a ser alvo da Seletiva caso 
+sejam classificadas como pertencentes ao Grupo A. Caso isso aconteça, seguem 
+as  informações  específicas  de  como  esse  processo  se  dará  no Regulamento 
+seção 1.3.1.1. 
+10.1   Local de aplicação 
+A  Coordenação  da  São  Paulo  Skills  irá  determinar  o  local  da  seletiva.  Esta  irá, 
+sempre que possível selecionar um local neutro, que possua toda, ou quase toda, 
+infraestrutura necessária.
+ 
+10.2   Data da aplicação 
+
+ 
+ 
+#17 – Tecnologias Web – São Paulo Skills 
+A  data  da  aplicação  está  prevista  no  Regulamento  da  Competição.  Caso  seja  
+necessária alteração as Unidades serão informadas com antecedência. 
+10.3   Infraestrutura para a seletiva 
+Além dos itens listados na seção 8.3 deste Descritivo Técnico, a Secretaria da São 
+Paulo Skills   irá   divulgar   conforme   preestabelecido   no   Regulamento   da   
+Competição,  os  demais  itens  que  deverão  ser  providenciados  pela  Unidade  do  
+Competidor para a execução do Desempate. 
+Essa relação será encaminhada ao Diretor da Unidade participante, com cópia ao 
+Avaliador. 
