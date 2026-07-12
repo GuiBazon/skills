@@ -1,0 +1,26 @@
+moduloB/
+├── config/
+│   └── db.php
+├── includes/
+│   └── auth.php
+├── public/
+│   ├── login.php
+│   ├── logout.php
+│   ├── companies.php
+│   ├── company_create.php
+│   ├── company_edit.php
+│   ├── company_deactivate.php
+│   ├── company_view.php
+│   ├── products.php
+│   ├── product_create.php
+│   ├── product_edit.php
+│   ├── product_delete.php
+│   ├── product_hide.php
+│   ├── gtin_verify.php
+│   ├── product_public.php
+│   ├── products.json.php
+│   └── product.json.php
+├── uploads/               (pasta com permissão de escrita)
+├── sql/
+│   └── dump.sql
+└── expert_readme.txt

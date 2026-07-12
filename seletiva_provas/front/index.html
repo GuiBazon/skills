@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Gestão de Treinos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- cabeçalho: nome do esporte + seletor de modalidade -->
+  <header id="cabecalho">
+    <h1 id="nomeEsporte">Tênis</h1>
+    <p>Registre treinos, carregue referências e acompanhe sua dedicação anual em <span id="nomeEsporte2">Tênis</span></p>
+    <nav id="seletorModalidade">
+      <button data-tema="tenis" class="ativo">Tênis</button>
+      <button data-tema="ballet">Ballet</button>
+      <button data-tema="natacao">Natação</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- painel de inspiração: grid de 5 slots com drag and drop -->
+    <section id="painelInspiracao">
+      <div class="painel-topo">
+        <div>
+          <span class="eyebrow">PAINEL DE INSPIRAÇÃO</span>
+          <h2>Referências visuais</h2>
+        </div>
+        <button id="btnAdicionarFotos">Adicionar fotos</button>
+        <input type="file" id="inputArquivo" accept="image/*" multiple hidden>
+      </div>
+      <div id="dropzone">
+        <div id="gridFotos"></div>
+      </div>
+    </section>
+
+    <!-- mapa de calor anual (estilo GitHub) -->
+    <section id="secaoHeatmap">
+      <div class="heatmap-topo">
+        <div>
+          <span class="eyebrow">DEDICAÇÃO ANUAL</span>
+          <h2>Mapa de calor 2026</h2>
+        </div>
+        <select id="selectCorHeatmap">
+          <option value="padrao">Paleta padrão da modalidade</option>
+          <option value="cor1">Base na cor 1 da paleta</option>
+          <option value="cor2">Base na cor 2 da paleta</option>
+          <option value="cor3">Base na cor 3 da paleta</option>
+        </select>
+      </div>
+      <div class="legenda">
+        <span><i class="quadrado nivel0"></i>Sem treino</span>
+        <span><i class="quadrado nivel1"></i>até 4h</span>
+        <span><i class="quadrado nivel2"></i>4h a 8h</span>
+        <span><i class="quadrado nivel3"></i>+8h</span>
+      </div>
+      <div id="heatmapWrapper">
+        <div id="labelsDias">
+          <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span>
+        </div>
+        <div id="heatmapGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip flutuante do heatmap -->
+  <div id="tooltip" class="escondido"></div>
+
+  <!-- aba fixa que fica sempre visível, mesmo com a sidebar fechada -->
+  <button id="abaCheckin">CHECK-IN</button>
+
+  <!-- sidebar retrátil de check-in de treinos -->
+  <aside id="sidebarCheckin">
+    <span class="eyebrow">CHECK-IN DE TREINOS</span>
+    <h3>Registrar treino</h3>
+
+    <label>Modalidade</label>
+    <select id="selectModalidade">
+      <option value="tenis">Tênis</option>
+      <option value="ballet">Ballet</option>
+      <option value="natacao">Natação</option>
+    </select>
+
+    <label>Data</label>
+    <input type="date" id="inputData">
+
+    <label>Data Hora Início</label>
+    <input type="datetime-local" id="inputInicio">
+
+    <label>Data Hora Fim</label>
+    <input type="datetime-local" id="inputFim">
+
+    <label>Local</label>
+    <input type="text" id="inputLocal" placeholder="Ex.: Centro de Treinamento">
+
+    <button id="btnSalvarCheckin">Salvar check-in</button>
+    <p id="mensagemCheckin"></p>
+
+    <span class="eyebrow">LOCALSTORAGE</span>
+    <h3>Últimos registros</h3>
+    <div id="listaRegistros"></div>
+    <button id="btnLimparRegistros">Limpar registros</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

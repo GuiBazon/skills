@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteRule ^animals\.json/([^/]+)/?$ api/animal.php?name=$1 [L,QSA]
+RewriteRule ^animals\.json/?$ api/animals.php [L,QSA]
+
+RewriteRule ^animals/new/?$ new-animal.php [L,QSA]
+RewriteRule ^animals/edit/([0-9]+)/?$ edit-animal.php?id=$1 [L,QSA]
+RewriteRule ^animals/delete/([0-9]+)/?$ delete-animal.php?id=$1 [L,QSA]
+RewriteRule ^animals/?$ animals.php [L,QSA]
+
+RewriteRule ^register/?$ register.php [L,QSA]
+RewriteRule ^login/?$ login.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]

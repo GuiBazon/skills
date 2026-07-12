@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; }
+
+.box { max-width: 380px; margin: 80px auto; background: #fff; padding: 30px; border-radius: 8px; text-align: center; }
+
+.btn { display: inline-block; background: #1565c0; color: #fff; padding: 10px 16px; border: none; border-radius: 4px; text-decoration: none; cursor: pointer; }
+.btn2 { background: #757575; }
+.link-btn { background: none; border: none; color: #1565c0; cursor: pointer; text-decoration: underline; padding: 0; font: inherit; }
+
+form { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+label { font-weight: bold; margin-top: 8px; }
+input, select, textarea { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+.pass { display: flex; gap: 6px; }
+.pass input { flex: 1; }
+
+.erro { color: #c62828; background: #fdecea; padding: 8px; border-radius: 4px; }
+
+.topbar { background: #0d47a1; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; }
+.topbar a { color: #fff; }
+
+.container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+.row { display: flex; justify-content: space-between; align-items: center; }
+.filtros { flex-direction: row; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.filtros select, .filtros input { flex: 1; min-width: 140px; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+th { background: #eee; }
+.badge { padding: 4px 8px; border-radius: 4px; color: #fff; font-size: 12px; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; }
+.modal.hidden { display: none; }
+.modal-content { background: #fff; padding: 24px; border-radius: 8px; max-width: 500px; width: 90%; position: relative; }
+.modal-close { position: absolute; top: 8px; right: 12px; font-size: 20px; text-decoration: none; color: #000; }
+
+.img-list { display: flex; gap: 12px; flex-wrap: wrap; }
+.img-item { display: flex; flex-direction: column; align-items: center; font-weight: normal; }
+
+.carousel { text-align: center; }
+.carousel-img { max-width: 100%; max-height: 280px; }

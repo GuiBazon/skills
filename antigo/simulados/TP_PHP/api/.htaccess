@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Se o que foi digitado na URL não for um arquivo real
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Se o que foi digitado não for uma pasta real
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Pega o que foi digitado e adiciona .php silenciosamente nos bastidores
+RewriteRule ^(.*)$ $1.php [L]
